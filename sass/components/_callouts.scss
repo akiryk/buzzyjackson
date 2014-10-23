@@ -1,0 +1,34 @@
+.callout {
+  margin-bottom: 2em;
+  text-align: center;
+  // &:before {
+  //   // border-bottom: 1px solid #ccc;
+  //   // display: block;
+  //   // width: 100%;
+  //   // content: '';
+  //   // position: relative;
+  //   // top: 21px;
+  //   // z-index: -1;
+  // }
+}
+
+.callout__alpha {
+  background-color: $brand-gold;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+}
+
+.callout__meta {
+  font-size: .75em;
+  font-style: italic;
+  color: #666;
+  letter-spacing: .01em;
+  @include mq(tablet){
+    color: #999;
+  }
+}

@@ -1,0 +1,143 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "normalize";
+@import "settings";
+@import "mixins";
+@import "base";
+@import "layout";
+
+@import "components/helpers";
+@import "components/brand";
+@import "components/headings";
+@import "components/promo";
+@import "components/masthead";
+@import "components/navigation";
+@import "components/social";
+@import "components/callouts";
+@import "components/blockquotes";
+@import "components/video";
+@import "components/media";
+
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);  
+}
+
+
+.wf-playfairdisplay-n9-active {
+  .book-title--alpha {
+    @include usefont(Playfair);
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    line-height: 1.125;
+    margin-bottom: .5rem;
+    font-weight: 900;
+    @include mq(tablet){
+      font-size: 3rem;
+      line-height: 1.25;
+      margin-bottom: .75rem;
+    }
+  }
+
+  .book-title--beta {
+    @include usefont(Lato);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: Playfair Display;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    text-shadow: -1px 1px 0 rgba(255,255,255,0.6);
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 0 #fff;
+    padding-bottom: .5em;
+    @include mq(tablet){
+      font-size: 32px;
+    }
+  }
+}
+
+
+  body {
+    font-family: Lato;
+  }
+  p {
+    color: #444;
+    font-size: 1.125em;
+  }
+
+  body {
+    @include usefont(Merriweather);
+  }
+  p {
+    color: #444;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+  .promo-beta p {
+    font-size: 1.125em;
+  }
+  .subtitle--beta {
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+  }
+
+
+
+
+  .subtitle--alpha {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.35;
+    color: #333;
+    @include mq(tablet){
+      font-size: 26px;
+      line-height: 1.25;
+    }
+  }
+  .callout {
+    font-family: Lato;
+  }
+  .callout__meta {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1em;
+  }
+  .connections__title {
+    font-family: Lato;
+  }
+
+  .connections__list--link {
+    font-family: Lato;
+  }
+  .quote-title {
+    font-family: Lato;
+    font-size: .9375em;
+  }
+
+  .purchase {
+    font-family: Lato;
+    font-size: 14px;
+    a {
+      color: #666;
+    }
+    a.divided {
+      padding-left: 10px;
+      margin-left: 10px;
+      border-left: 1px solid #999;
+    }
+  }
+
+

@@ -1,0 +1,41 @@
+body {
+  font-family: Open Sans;
+  line-height: 1.5;
+}
+
+p {
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  // color: #0082f6;
+  color: #444;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 19px;
+  &:hover {
+    color: $brand-blue;
+    background-image: linear-gradient(to bottom, white 50%, #0082f6 50%);
+  }
+}
+
+.cf{
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+}

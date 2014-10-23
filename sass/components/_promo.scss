@@ -1,0 +1,55 @@
+.promo {
+  margin: 0 auto;
+  max-width: 46rem;
+}
+
+.promo-image {
+  max-width: 167px;
+  margin: 0 auto 1em auto;
+}
+
+.book-title--alpha {
+  max-width: 32em;
+  margin: 0 auto;
+  text-align: center;
+
+  // fallback
+  font-family: Times New Roman, Times, serif;
+  font-size: 54px;
+  margin-bottom: 6px;
+}
+
+.subtitle--alpha {
+  @extend h3;
+  max-width: 32em;
+  margin: 0 auto 1em auto;
+  text-align: center;
+}
+
+.promo-beta-group {
+  // margin-left: -2rem;
+}
+
+.promo-beta {
+  margin-bottom: 2rem;
+
+  p {
+    font-size: 1.125em;
+  }
+}
+
+.beta-desc {
+  @include mq(tablet){
+    overflow: hidden;
+  }
+}
+
+.promo-image.mini {
+  margin-top: 0.5em;
+  width: 25%;
+  float: left;
+  margin-right: 2rem;
+}
+.book-title--beta {
+  font-family: Times New Roman, Times, serif;
+}

@@ -1,0 +1,33 @@
+.full-wrapper {
+  overflow: hidden;
+  @include mq(tablet){
+    margin: 0 auto;
+    overflow: visible;
+  }
+}
+
+.site-content {
+  margin: 1em;
+  @include mq(desktop){
+    margin: 0 auto;
+    max-width: 62em;
+  }
+}
+.entry-content {
+  max-width: 46em;
+  margin: 0 auto 3rem auto;
+  @include mq(desktop){
+    padding: 0 2em;
+  }
+}
+
+.sub-wrapper-outer {
+  @extend .cf;
+  background: #eee;
+  padding: 1.5em 1em;
+}
+
+.sub-wrapper-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}

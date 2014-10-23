@@ -1,0 +1,52 @@
+.header-wrapper {
+  margin: 1em;
+  @include mq(tablet) {
+    margin-top: 2em;
+  }
+}
+
+.brand-wrapper {
+  margin: 0 auto;
+  margin-bottom: .5rem;
+  overflow: hidden;
+  width: 240px;
+  @include mq(tablet) {
+    margin-bottom: 1em;
+    position: relative;
+    text-align: center;
+    width: 40.125em;
+  }
+}
+
+.logo {
+  display: inline-block;
+  width: 15em;
+  @include mq(tablet) {
+    width: 20.625em;
+  }
+}
+
+%sidebars {
+  display: none;
+  position: relative;
+  top: -1.75em;
+  @include mq(tablet) {
+    display: inline-block;
+    width: 7.75em;
+  }
+}
+.logo-left {
+  @extend %sidebars;
+  padding-right: 2em;
+  text-align: right;  
+}
+
+.logo-right {
+  @extend %sidebars;
+  padding-left: 2em;
+  text-align: left;
+}
+
+h1.site-title {
+  display: none;
+}

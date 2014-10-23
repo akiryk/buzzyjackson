@@ -1,0 +1,54 @@
+@mixin usefont($font: Helvetica) {
+  @if $font == Lato {
+    font-family: Lato, Helvetica, Arial, sans;
+  }
+  
+  @if $font == Merriweather {
+    font-family: Georgia, Merriweather, Georgia, serif;
+  }
+
+  @if $font == Playfair {
+    font-family: Playfair Display, Georgia, serif;
+  }
+
+}
+
+
+/*
+ ********** MEDIA QUERIES *******************
+ */
+
+$palm-end:              $tablet-start - 0.01em;
+$tablet-end:               $desk-start - 0.01em;
+
+@mixin mq($media-query){
+
+  @if $media-query == tablet{
+    @media only screen and (min-width:$tablet-start) { @content; }
+  }
+  
+  @if $media-query == desktop{
+    @media only screen and (min-width:$desk-start) { @content; }
+  }
+
+  // Avoid these unless absolutely necessary 
+
+  // Targets ONLY smartphone size
+  @if $media-query == smartphone {
+    @media only screen and (max-width:$palm-end) { @content; }
+  }
+
+  // Targets smartphone and tablet only
+  // This could be the default and you could use 'desktop' as the mq.
+  @if $media-query == portable{
+    @media only screen and (max-width:$tablet-end) { @content; }
+  }
+}
+
+@mixin custom-mq($min-width: $desk-start){
+  @if $min-width > 300 {
+    // assume $min-width is in pixels, so convert to ems
+    $min-width: $min-width / 16 * 1em;
+  }   
+  @media only screen and (min-width: $min-width) { @content; }
+}

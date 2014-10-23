@@ -1,0 +1,123 @@
+.playfair-headings.wf-playfairdisplay-n9-active {
+  .book-title--alpha {
+    font-family: Playfair Display;
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    line-height: 1.125;
+    margin-bottom: .5rem;
+    font-weight: 900;
+    @include mq(tablet){
+      font-size: 3rem;
+      line-height: 1.25;
+      margin-bottom: .75rem;
+    }
+  }
+
+  .book-title--beta {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: Playfair Display;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    text-shadow: -1px 1px 0 rgba(255,255,255,0.6);
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 0 #fff;
+    padding-bottom: .5em;
+    @include mq(tablet){
+      font-size: 32px;
+    }
+  }
+}
+
+.lato-body {
+  body {
+    font-family: Lato;
+  }
+  p {
+    color: #444;
+    font-size: 1.125em;
+  }
+}
+
+.merriweather-body {
+  body {
+    font-family: Merriewather;
+  }
+  p {
+    color: #444;
+    font-size: 1.3125em;
+    line-height: 1.4;
+  }
+  .promo-beta p {
+    font-size: 1.125em;
+  }
+  .subtitle--beta {
+    font-family: Merriweather;
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+.lato-ui {
+  .navigation-primary {
+    font-family: Lato;  
+    font-weight: 300;
+  }
+  ul.nav-list--horizontal li {
+    font-weight: 300;
+  }
+  .subtitle--alpha {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.35;
+    color: #333;
+    @include mq(tablet){
+      font-size: 26px;
+      line-height: 1.25;
+    }
+  }
+  .callout {
+    font-family: Lato;
+  }
+  .callout__meta {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1em;
+  }
+  .connections__title {
+    font-family: Lato;
+  }
+
+  .connections__list--link {
+    font-family: Lato;
+  }
+  .quote-title {
+    font-family: Lato;
+    font-size: .9375em;
+  }
+
+  .purchase {
+    font-family: Lato;
+    font-size: 14px;
+    a {
+      color: #666;
+    }
+    a.divided {
+      padding-left: 10px;
+      margin-left: 10px;
+      border-left: 1px solid #999;
+    }
+  }
+
+}

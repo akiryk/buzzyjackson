@@ -1,0 +1,31 @@
+.quote-title {
+  // margin-left: 2.5rem;
+  color: #bd2819;
+  font-size: .75em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+blockquote {
+  font-size: 1.125em; 
+  margin: 0 0 1em 0;
+  padding-left: 1em;
+  border-left: 1px solid #ccc;
+  @include mq(tablet){
+    margin: 0 1.5em 1em 1.5em;
+    padding-left: 0;
+    border: none;
+  }
+}
+
+.quote-source {
+  display: block;
+  color: #999;
+  font-style: italic;
+  // font-size: 0.75em;
+
+  &:before {
+    content: '\A'; 
+  }
+}

@@ -1,10 +1,30 @@
 body {
-  font-family: Open Sans;
   line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 p {
-  line-height: 1.5;
+  font-family: Georgia;
+  font-size: 1.25em;
+  line-height: 1.35;
+  a {
+    @include refined-link;
+    &:hover {
+      background-image: linear-gradient(to bottom, white 50%, #0082f6 50%);
+    }
+  }
+}
+
+.wf-merriweather-n7-active {
+  p {
+    @include usefont(Merriweather);
+    font-size: 1.125em;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+  .promo-beta p {
+    font-size: 1em;
+  }
 }
 
 img {
@@ -19,16 +39,11 @@ html {
 }
 
 a {
-  // color: #0082f6;
   color: #444;
   text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 19px;
+ 
   &:hover {
     color: $brand-blue;
-    background-image: linear-gradient(to bottom, white 50%, #0082f6 50%);
   }
 }
 
@@ -38,4 +53,9 @@ a {
         display:table;
         clear:both;
     }
+}
+
+.home .entry-title,
+.page-template-book-php .entry-title {
+  display: none;
 }

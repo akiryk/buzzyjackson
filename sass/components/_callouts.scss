@@ -1,34 +1,60 @@
 .callout {
-  margin-bottom: 2em;
-  text-align: center;
-  // &:before {
-  //   // border-bottom: 1px solid #ccc;
-  //   // display: block;
-  //   // width: 100%;
-  //   // content: '';
-  //   // position: relative;
-  //   // top: 21px;
-  //   // z-index: -1;
-  // }
-}
-
-.callout__alpha {
-  background-color: $brand-gold;
-  color: #fff;
   display: inline-block;
   font-weight: 500;
   letter-spacing: 1px;
-  margin-bottom: 1em;
+  margin-bottom: $bottom-spacing;
   padding: 0.5em 1em;
   text-transform: uppercase;
 }
 
-.callout__meta {
-  font-size: .75em;
-  font-style: italic;
+.callout-major {
+  background-color: $brand-gold;
+  color: #fff;
+}
+
+.callout-minor {
+  line-height: 0.5;
+  text-align: center;
+}
+.callout-minor span {
+  display: inline-block;
+  position: relative;  
+}
+.callout-minor span:before,
+.callout-minor span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #ccc;
+  top: 0;
+  width: 100px;
+}
+.callout-minor span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.callout-minor span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.callout-meta {
   color: #666;
   letter-spacing: .01em;
+  margin-bottom: $bottom-spacing;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
   @include mq(tablet){
     color: #999;
+  }
+}
+
+.wf-lato-n3-active {
+  .callout {
+    @include usefont(Lato);
+  }
+  .callout-meta {
+    @include usefont(Lato);
   }
 }

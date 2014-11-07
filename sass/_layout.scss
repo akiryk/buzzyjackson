@@ -10,7 +10,7 @@
   margin: 1em;
   @include mq(desktop){
     margin: 0 auto;
-    max-width: 62em;
+    // max-width: 62em;
   }
 }
 .entry-content {

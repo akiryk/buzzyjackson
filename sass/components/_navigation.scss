@@ -6,10 +6,10 @@
   @include usefont(Lato);
   clear: both; 
   font-weight: 300;
-  margin-bottom: 1.5rem;
+  margin-bottom: $bottom-spacing;
   text-align: center;
   @include mq(tablet){
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -52,6 +52,8 @@ ul.nav-menu li {
   @include mq(tablet){
     background-image: none;
     background-position: 0 24px;
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
     &:hover {
       background-image: linear-gradient(to bottom, #aaa 50%, #fff 50%); 
       // background-color: #333;
@@ -59,5 +61,27 @@ ul.nav-menu li {
     }
     font-size: 1em;
     padding: .3125rem;
+  }
+}
+
+ul.nav-menu ul.show {
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  li {
+    padding-left: 0;
+    a {
+      color: white;
+      font-size: 3rem;
+      text-transform: capitalize;
+    }
   }
 }

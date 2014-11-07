@@ -1,0 +1,31 @@
+/** These styles are used in your backend editor. **/
+
+blockquote {
+  font-style: italic;
+}
+
+.callout {
+  display: block;
+  background: gray;
+  padding: 1em;
+}
+
+.quote-title{
+  margin-left: 40px;
+  text-transform: uppercase;
+  color: #bd2819;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.quote-source {
+  color: #aaa;
+}
+
+#mceu_42-text {
+  color: blue;
+}
+
+.mce-text {
+  color: red;
+}

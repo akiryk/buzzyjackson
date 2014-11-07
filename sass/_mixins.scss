@@ -1,10 +1,10 @@
-@mixin usefont($font: Helvetica) {
+@mixin usefont($font: Merriweather) {
   @if $font == Lato {
-    font-family: Lato, Helvetica, Arial, sans;
+    font-family: Lato, Helvetica, Arial, sans-serif;
   }
   
   @if $font == Merriweather {
-    font-family: Georgia, Merriweather, Georgia, serif;
+    font-family: Merriweather, Georgia, serif;
   }
 
   @if $font == Playfair {
@@ -13,6 +13,12 @@
 
 }
 
+@mixin refined-link {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 19px;
+}
 
 /*
  ********** MEDIA QUERIES *******************

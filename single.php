@@ -1,32 +1,43 @@
 <?php
 /**
- * The template for displaying all single posts.
+* Template Name: Book Main
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
  *
  * @package buzzyjackson_s
  */
 
-get_header(); ?>
+get_header(); 
+$postID = get_the_ID();
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <section class="home-hero">
+      <div class="home-hero-intro centered-module">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+        <?php the_title( sprintf( '<h1 class="book-title margin-block">', esc_url( get_permalink() ) ), '</h1>' ); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+        </div>
+        <div class="connections-wrapper">
+          <div class="connections">
+            <div class="connections__title">Connect</div>
+            <ul class="connections__list">
+              <li><a class="connections__list--link facebook" href="www.facebook.com">Facebook</a></li>
+              <li><a class="connections__list--link twitter" href="www.facebook.com">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="home-hero-body content">
+      
+          <?php while ( have_posts() ) : the_post(); ?>
+            <?php  get_template_part( 'content', 'page' ); ?>
+          <?php endwhile; // end of the loop. ?>
 
-			<?php buzzyjackson_s_post_nav(); ?>
+        </div><!-- .main-body -->
+    
+      </div>
+    </section><!-- content -->
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

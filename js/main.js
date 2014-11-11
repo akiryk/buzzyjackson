@@ -1,18 +1,16 @@
 jQuery(document).ready(function($) {
   
-  function handler(e){
+  var handler = function(e){
     $(this).off();
-    $(this)
-      .addClass('open')
-      .find('.sub-menu')
-      .addClass('show');
+    $overlay = $(this).find('.overlay');
+    $overlay.addClass('open');
     e.preventDefault();
     e.stopPropagation();
 
-    $(this).on('click', function(e) {
+    $(document).on('click', function(e) {
       $(this).off();
       attachHandler();
-      $(this).find('.sub-menu').removeClass('show');
+      $overlay.removeClass('open');
     });
   };
 

@@ -11,7 +11,7 @@
 <head>
 <script type="text/javascript">
 WebFontConfig = {
-   google: { families: [ 'Lato:300:latin', 'Playfair+Display:900:latin', 'Merriweather:400,700,700italic,400italic:latin' ] }
+   google: { families: [ 'Lato:300,400,700:latin', 'Playfair+Display:900:latin', 'Merriweather:400,700,700italic,400italic:latin' ] }
 };
 (function() {
   var wf = document.createElement('script');
@@ -54,11 +54,15 @@ WebFontConfig = {
     </div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Primary Menu', 'buzzyjackson_s' ); ?></button>
+
+      <?php $walker = new AK_Nav_Walker; ?>
 			<?php wp_nav_menu( array( 
           'theme_location' => 'primary',
-          'menu_class' => 'menu nav-menu'
+          'menu_class' => 'menu nav-menu',
+          'walker' => $walker
         ) ); 
       ?>
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

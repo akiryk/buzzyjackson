@@ -4,9 +4,16 @@
 
 h1,
 .alpha {
-  font-size: 2em;
   margin: 0;
   overflow-wrap: break-word;
+  font-size: 2.25rem;
+  line-height: 1.125;
+  margin-bottom: .5em;
+  @include mq(tablet){
+    font-size: 3.125rem;
+    line-height: 1.25;
+    margin-bottom: .75rem;
+  }
 }
 
 h2,
@@ -20,6 +27,7 @@ h3,
 .gamma {
   font-size: 1.25em;
   margin: 0;
+  margin-bottom: 1em;
   overflow-wrap: break-word;
 }
 

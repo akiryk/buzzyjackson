@@ -9,10 +9,13 @@
 @import "base";
 @import "layout";
 
+@import "components/headings";
 @import "components/helpers";
+@import "components/home-hero";
+@import "components/book-page";
+@import "components/posts";
 @import "components/web-fonts";
 @import "components/brand";
-@import "components/headings";
 @import "components/promo";
 @import "components/masthead";
 @import "components/navigation";
@@ -22,6 +25,8 @@
 @import "components/video";
 @import "components/media";
 @import "components/secondary-books";
+@import "components/buttons";
+@import "components/typography";
 
 .assistive-text {
   position: absolute !important;

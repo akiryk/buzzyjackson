@@ -1,0 +1,27 @@
+.content p:first-of-type:first-letter {
+  @include backupfont(serif);
+  font-size: 3em;
+
+}
+
+.wf-lato-n3-active {
+  .content p:first-of-type:first-letter {
+    @include usefont(Lato);
+    color: $brand-red;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 0.9em;
+    float: left;
+    padding-right: 0.15em;
+  }
+}
+
+.acontent p:first-of-type:first-letter {
+  font-family: Lato;
+  color: #b71909;
+  font-size: 93px;
+  font-weight: 700;
+  line-height: 74px;
+  float: left;
+  padding-right: 6px;
+}

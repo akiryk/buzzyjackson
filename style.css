@@ -275,73 +275,85 @@ th {
  */
 /* line 1, sass/_base.scss */
 body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
 
-/* line 6, sass/_base.scss */
+/* line 7, sass/_base.scss */
 p {
   font-family: Georgia;
   font-size: 1.25em;
   line-height: 1.35;
 }
-/* line 10, sass/_base.scss */
+/* line 11, sass/_base.scss */
 p a {
-  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.6) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, #0082f6 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 19px;
+  color: #0082f6;
 }
-/* line 12, sass/_base.scss */
+/* line 14, sass/_base.scss */
 p a:hover {
-  background-image: linear-gradient(to bottom, white 50%, #0082f6 50%);
+  background-image: linear-gradient(to bottom, white 50%, #222222 50%);
+  color: #222222;
 }
 
-/* line 19, sass/_base.scss */
+/* line 22, sass/_base.scss */
 .wf-merriweather-n7-active p {
-  font-family: Merriweather, Georgia, serif;
+  font-family: Merriweather;
   font-size: 1.125em;
   letter-spacing: 0;
   line-height: 1.5;
 }
-/* line 25, sass/_base.scss */
+/* line 28, sass/_base.scss */
 .wf-merriweather-n7-active .promo-beta p {
   font-size: 1em;
 }
 
-/* line 30, sass/_base.scss */
+/* line 33, sass/_base.scss */
+figure {
+  margin-top: 0;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 37, sass/_base.scss */
 img {
   max-width: 100%;
 }
 
-/* line 34, sass/_base.scss */
+/* line 41, sass/_base.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 37, sass/_base.scss */
+/* line 44, sass/_base.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 41, sass/_base.scss */
+/* line 48, sass/_base.scss */
 a {
-  color: #444;
+  color: #222222;
   text-decoration: none;
 }
-/* line 45, sass/_base.scss */
+/* line 52, sass/_base.scss */
 a:hover {
   color: #0082f6;
 }
 
-/* line 51, sass/_base.scss */
-.cf:after, .sub-wrapper-outer:after, .media:after {
+/* line 58, sass/_base.scss */
+.cf:after, .secondary-heros:after, .media:after, .secondary-book:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 58, sass/_base.scss */
+/* line 65, sass/_base.scss */
 .home .entry-title,
 .page-template-book-php .entry-title {
   display: none;
@@ -367,31 +379,80 @@ a:hover {
   /* line 9, sass/_layout.scss */
   .site-content {
     margin: 0 auto;
+    max-width: 46rem;
   }
 }
 
 /* line 16, sass/_layout.scss */
-.entry-content {
+.entry-content,
+.entry-footer {
   max-width: 46em;
   margin: 0 auto 3rem auto;
 }
 @media only screen and (min-width: 62.5em) {
   /* line 16, sass/_layout.scss */
-  .entry-content {
+  .entry-content,
+  .entry-footer {
     padding: 0 2em;
   }
 }
 
-/* line 24, sass/_layout.scss */
-.sub-wrapper-outer {
-  background: #eee;
+/* line 25, sass/_layout.scss */
+.secondary-heros {
+  background: #f4f4f4;
   padding: 1.5em 1em;
 }
 
-/* line 30, sass/_layout.scss */
+/* line 31, sass/_layout.scss */
 .sub-wrapper-inner {
   max-width: 42rem;
   margin: 0 auto;
+}
+
+/*
+ * h1 through h6
+ */
+/* line 5, sass/components/_headings.scss */
+h1,
+.alpha {
+  margin: 0;
+  overflow-wrap: break-word;
+  font-size: 2.25rem;
+  line-height: 1.125;
+  margin-bottom: .5em;
+}
+@media only screen and (min-width: 42.5em) {
+  /* line 5, sass/components/_headings.scss */
+  h1,
+  .alpha {
+    font-size: 3.125rem;
+    line-height: 1.25;
+    margin-bottom: .75rem;
+  }
+}
+
+/* line 19, sass/components/_headings.scss */
+h2,
+.beta {
+  font-size: 1.5em;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* line 26, sass/components/_headings.scss */
+h3, .book-subtitle,
+.gamma {
+  font-size: 1.25em;
+  margin: 0;
+  margin-bottom: 1em;
+  overflow-wrap: break-word;
+}
+
+/* line 34, sass/components/_headings.scss */
+h4,
+.delta {
+  font-size: 1em;
+  margin: 0;
 }
 
 /* line 1, sass/components/_helpers.scss */
@@ -406,127 +467,139 @@ a:hover {
   text-align: center;
 }
 
-/* line 1, sass/components/_web-fonts.scss */
-h1 {
-  font-size: 2.25rem;
-  line-height: 1.125;
-  margin-bottom: .5rem;
-}
-@media only screen and (min-width: 42.5em) {
-  /* line 1, sass/components/_web-fonts.scss */
-  h1 {
-    font-size: 3.125rem;
-    line-height: 1.25;
-    margin-bottom: .75rem;
-  }
+/* line 2, sass/components/_home-hero.scss */
+.home-hero .hero-image {
+  margin-top: 0;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 12rem;
 }
 
-/* line 12, sass/components/_web-fonts.scss */
-.wf-playfairdisplay-n9-active h1 {
-  font-family: Playfair Display, Georgia, serif;
-  letter-spacing: 1px;
-  font-weight: 900;
-}
-@media only screen and (min-width: 42.5em) {
-  /* line 12, sass/components/_web-fonts.scss */
-  .wf-playfairdisplay-n9-active h1 {
-    font-size: 3rem;
-  }
+/* line 8, sass/components/_home-hero.scss */
+.home-hero-intro {
+  margin-bottom: 2em;
 }
 
-/* line 24, sass/components/_web-fonts.scss */
+/* line 12, sass/components/_home-hero.scss */
+.book-title {
+  margin-top: 0;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Georgia, Times, serif;
+  text-align: center;
+  font-size: 3.375em;
+}
+
+/* line 19, sass/components/_home-hero.scss */
+.book-subtitle {
+  margin-top: 0;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: -.5em;
+}
+
+/* line 28, sass/components/_home-hero.scss */
+.wf-lato-n3-active .book-title {
+  font-family: Playfair Display;
+}
+/* line 32, sass/components/_home-hero.scss */
+.wf-lato-n3-active .book-subtitle {
+  font-family: Lato;
+}
+
+/* line 38, sass/components/_home-hero.scss */
+.margin-block:last-child {
+  margin-bottom: 0;
+}
+
+/* line 1, sass/components/_posts.scss */
+.entry-title {
+  margin-top: 0;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Georgia, Times, serif;
+  text-align: left;
+  font-size: 2.75em;
+}
+
+/* line 8, sass/components/_posts.scss */
+.blog .entry-header {
+  padding: 0 2em;
+}
+
+/* line 14, sass/components/_posts.scss */
+.wf-lato-n3-active .entry-title {
+  font-family: Playfair Display;
+}
+
+/* line 5, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .book-title--beta {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
-/* line 31, sass/components/_web-fonts.scss */
+/* line 12, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .navigation-primary {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-weight: 300;
 }
-/* line 35, sass/components/_web-fonts.scss */
+/* line 16, sass/components/_web-fonts.scss */
 .wf-lato-n3-active ul.nav-list--horizontal li {
   font-weight: 300;
 }
-/* line 38, sass/components/_web-fonts.scss */
+/* line 19, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .subtitle--alpha {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-weight: 300;
   font-size: 22px;
   line-height: 1.35;
   color: #333;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 38, sass/components/_web-fonts.scss */
+  /* line 19, sass/components/_web-fonts.scss */
   .wf-lato-n3-active .subtitle--alpha {
     font-size: 26px;
     line-height: 1.25;
   }
 }
-/* line 49, sass/components/_web-fonts.scss */
+/* line 30, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .connections__title {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
 }
-/* line 53, sass/components/_web-fonts.scss */
+/* line 34, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .connections__list--link {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
 }
-/* line 56, sass/components/_web-fonts.scss */
+/* line 37, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .quote-title {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-size: .9375em;
 }
-/* line 61, sass/components/_web-fonts.scss */
+/* line 42, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .purchase {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-size: 14px;
 }
-/* line 64, sass/components/_web-fonts.scss */
+/* line 45, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .purchase a {
   color: #666;
 }
-/* line 67, sass/components/_web-fonts.scss */
+/* line 48, sass/components/_web-fonts.scss */
 .wf-lato-n3-active .purchase a.divided {
   padding-left: 10px;
   margin-left: 10px;
   border-left: 1px solid #999;
-}
-
-/*
- * h1 through h6
- */
-/* line 5, sass/components/_headings.scss */
-h1,
-.alpha {
-  font-size: 2em;
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-/* line 12, sass/components/_headings.scss */
-h2,
-.beta {
-  font-size: 1.5em;
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-/* line 19, sass/components/_headings.scss */
-h3, .subtitle--alpha,
-.gamma {
-  font-size: 1.25em;
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-/* line 26, sass/components/_headings.scss */
-h4,
-.delta {
-  font-size: 1em;
-  margin: 0;
 }
 
 /* line 1, sass/components/_promo.scss */
@@ -535,54 +608,24 @@ h4,
   max-width: 46rem;
 }
 
-/* line 6, sass/components/_promo.scss */
-.promo-image {
-  max-width: 167px;
-  margin: 0 auto 1em auto;
-}
-
-/* line 11, sass/components/_promo.scss */
-.book-title--alpha {
-  max-width: 32em;
-  margin: 0 auto;
-  text-align: center;
-  font-family: Times New Roman, Times, serif;
-  font-size: 54px;
-  margin-bottom: 6px;
-}
-
-/* line 22, sass/components/_promo.scss */
-.subtitle--alpha {
-  max-width: 32em;
-  margin: 0 auto 1em auto;
-  text-align: center;
-}
-
-/* line 33, sass/components/_promo.scss */
+/* line 10, sass/components/_promo.scss */
 .promo-beta {
   clear: left;
   margin-bottom: 2rem;
 }
-/* line 37, sass/components/_promo.scss */
+/* line 14, sass/components/_promo.scss */
 .promo-beta p {
   font-size: 1.125em;
 }
 
 @media only screen and (min-width: 42.5em) {
-  /* line 42, sass/components/_promo.scss */
+  /* line 19, sass/components/_promo.scss */
   .beta-desc {
     overflow: hidden;
   }
 }
 
-/* line 48, sass/components/_promo.scss */
-.promo-image.mini {
-  width: 25%;
-  float: left;
-  margin-right: 2rem;
-}
-
-/* line 53, sass/components/_promo.scss */
+/* line 26, sass/components/_promo.scss */
 .book-title--beta {
   font-family: Times New Roman, Times, serif;
 }
@@ -665,7 +708,7 @@ h1.site-title a {
 
 /* line 5, sass/components/_navigation.scss */
 .main-navigation {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   clear: both;
   font-weight: 300;
   margin-bottom: 1.5rem;
@@ -692,10 +735,6 @@ ul.nav-menu {
   ul.nav-menu {
     margin-left: -2em;
   }
-}
-/* line 26, sass/components/_navigation.scss */
-ul.nav-menu ul {
-  display: none;
 }
 
 /* line 31, sass/components/_navigation.scss */
@@ -743,43 +782,164 @@ ul.nav-menu li:first-of-type {
   }
 }
 
-/* line 67, sass/components/_navigation.scss */
-ul.nav-menu ul.show {
-  background-color: rgba(0, 0, 0, 0.8);
+/* Overlay style */
+/* line 90, sass/components/_navigation.scss */
+.overlay {
   position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
+  background-color: rgba(255, 255, 255, 0.9);
 }
-/* line 79, sass/components/_navigation.scss */
-ul.nav-menu ul.show li {
+
+/* Overlay closing cross */
+/* line 100, sass/components/_navigation.scss */
+.overlay .overlay-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  background: url(../img/cross.png) no-repeat center center;
+  text-indent: 200%;
+  color: transparent;
+  outline: none;
+  z-index: 100;
+}
+
+/* Menu style */
+/* line 116, sass/components/_navigation.scss */
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  font-size: 54px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 126, sass/components/_navigation.scss */
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+/* line 135, sass/components/_navigation.scss */
+.overlay ul li {
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+  padding-left: 0;
+  min-height: 54px;
+}
+
+/* line 143, sass/components/_navigation.scss */
+.overlay ul li:first-of-type {
   padding-left: 0;
 }
-/* line 81, sass/components/_navigation.scss */
-ul.nav-menu ul.show li a {
-  color: white;
-  font-size: 3rem;
-  text-transform: capitalize;
+
+/* line 147, sass/components/_navigation.scss */
+.overlay ul li a {
+  font-family: Lato;
+  font-weight: 100;
+  display: block;
+  color: #111;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
+/* line 157, sass/components/_navigation.scss */
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+  background-image: none;
+  color: #0082f6;
+}
+
+/* Effects */
+/* line 164, sass/components/_navigation.scss */
+.overlay-hugeinc {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+/* line 171, sass/components/_navigation.scss */
+.overlay-hugeinc.open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+/* line 178, sass/components/_navigation.scss */
+.overlay-hugeinc nav {
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+}
+
+/* line 183, sass/components/_navigation.scss */
+.overlay-hugeinc nav ul {
+  opacity: 0.4;
+  -webkit-transform: translateY(-25%) rotateX(35deg);
+  transform: translateY(-25%) rotateX(35deg);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+/* line 191, sass/components/_navigation.scss */
+.overlay-hugeinc.open nav ul {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+/* line 197, sass/components/_navigation.scss */
+.overlay-hugeinc.close nav ul {
+  -webkit-transform: translateY(25%) rotateX(-35deg);
+  transform: translateY(25%) rotateX(-35deg);
+}
+
+@media screen and (max-height: 30.5em) {
+  /* line 203, sass/components/_navigation.scss */
+  .overlay nav {
+    height: 70%;
+    font-size: 34px;
+  }
+
+  /* line 207, sass/components/_navigation.scss */
+  .overlay ul li {
+    min-height: 34px;
+  }
+}
 /* line 1, sass/components/_social.scss */
 .connections-wrapper {
-  border-top: 1px solid #ccc;
+  border-top: 10px solid #eee;
+}
+@media only screen and (min-width: 62.5em) {
+  /* line 1, sass/components/_social.scss */
+  .connections-wrapper {
+    margin-bottom: 1.875em;
+    margin-left: -112px;
+    width: 60em;
+  }
 }
 
-/* line 4, sass/components/_social.scss */
+/* line 9, sass/components/_social.scss */
 .connections {
   border-width: 1px;
   border-color: #ccc;
   float: right;
   width: 33.33333%;
-  padding-top: 1.5rem;
+  padding-top: 1.825em;
   padding-left: 0;
   padding-bottom: 1.5rem;
   margin-left: 1.5rem;
@@ -788,31 +948,30 @@ ul.nav-menu ul.show li a {
   text-align: center;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 4, sass/components/_social.scss */
+  /* line 9, sass/components/_social.scss */
   .connections {
     padding-bottom: 1.5rem;
     padding-top: 1rem;
-    width: 25%;
   }
 }
 @media only screen and (min-width: 62.5em) {
-  /* line 4, sass/components/_social.scss */
+  /* line 9, sass/components/_social.scss */
   .connections {
     border: none;
     padding-right: 1em;
-    padding-top: 1.4rem;
+    padding-top: 1.825em;
     text-align: left;
-    width: auto;
+    width: 5em;
   }
 }
-/* line 30, sass/components/_social.scss */
+/* line 33, sass/components/_social.scss */
 .connections ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 37, sass/components/_social.scss */
+/* line 40, sass/components/_social.scss */
 .connections__title {
   color: #b71909;
   line-height: 2.25;
@@ -822,13 +981,13 @@ ul.nav-menu ul.show li a {
   margin-bottom: .25rem;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 37, sass/components/_social.scss */
+  /* line 40, sass/components/_social.scss */
   .connections__title {
     margin-bottom: 0;
   }
 }
 
-/* line 49, sass/components/_social.scss */
+/* line 52, sass/components/_social.scss */
 .connections__list--link {
   background: none;
   color: #666;
@@ -837,12 +996,12 @@ ul.nav-menu ul.show li a {
   padding: 0.75em 0;
   text-decoration: none;
 }
-/* line 59, sass/components/_social.scss */
+/* line 62, sass/components/_social.scss */
 .connections__list--link:hover {
   background: none;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 49, sass/components/_social.scss */
+  /* line 52, sass/components/_social.scss */
   .connections__list--link {
     display: inline;
     background-position: 0 22px;
@@ -859,48 +1018,50 @@ ul.nav-menu ul.show li a {
   text-transform: uppercase;
 }
 
-/* line 10, sass/components/_callouts.scss */
-.callout-major {
-  background-color: #7d7339;
-  color: #fff;
-}
-
-/* line 15, sass/components/_callouts.scss */
-.callout-minor {
+/* line 11, sass/components/_callouts.scss */
+.callout {
   line-height: 0.5;
   text-align: center;
 }
 
-/* line 19, sass/components/_callouts.scss */
-.callout-minor span {
+/* line 15, sass/components/_callouts.scss */
+.callout span {
   display: inline-block;
   position: relative;
 }
 
-/* line 23, sass/components/_callouts.scss */
-.callout-minor span:before,
-.callout-minor span:after {
+/* line 19, sass/components/_callouts.scss */
+.callout span:before,
+.callout span:after {
   content: "";
   position: absolute;
   height: 5px;
+  border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  top: 0;
-  width: 100px;
+  top: 0.125rem;
+  width: 4rem;
 }
 
-/* line 32, sass/components/_callouts.scss */
-.callout-minor span:before {
+/* line 29, sass/components/_callouts.scss */
+.callout span:before {
   right: 100%;
   margin-right: 15px;
 }
 
-/* line 36, sass/components/_callouts.scss */
-.callout-minor span:after {
+/* line 33, sass/components/_callouts.scss */
+.callout span:after {
   left: 100%;
   margin-left: 15px;
 }
 
-/* line 41, sass/components/_callouts.scss */
+/* line 38, sass/components/_callouts.scss */
+.callout-major {
+  color: #b71909;
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+/* line 48, sass/components/_callouts.scss */
 .callout-meta {
   color: #666;
   letter-spacing: .01em;
@@ -910,60 +1071,57 @@ ul.nav-menu ul.show li a {
   font-size: 1em;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 41, sass/components/_callouts.scss */
+  /* line 48, sass/components/_callouts.scss */
   .callout-meta {
     color: #999;
   }
 }
 
-/* line 54, sass/components/_callouts.scss */
+/* line 61, sass/components/_callouts.scss */
 .wf-lato-n3-active .callout {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
 }
-/* line 57, sass/components/_callouts.scss */
+/* line 64, sass/components/_callouts.scss */
 .wf-lato-n3-active .callout-meta {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato;
 }
 
 /* line 1, sass/components/_blockquotes.scss */
 .quote-title {
-  margin-left: 2.5rem;
   color: #bd2819;
-  font-size: .75em;
+  font-size: 1em;
   font-weight: 600;
   margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
-/* line 10, sass/components/_blockquotes.scss */
+/* line 9, sass/components/_blockquotes.scss */
 blockquote,
-blockquote p,
 .wf-merriweather-n7-active blockquote,
-.wf-merriweather-n7-active blockquote p {
+.wf-merriweather-n7-active blockquote {
   margin: 0 0 1em 0;
   padding-left: 1em;
   border-left: 1px solid #ccc;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 10, sass/components/_blockquotes.scss */
+  /* line 9, sass/components/_blockquotes.scss */
   blockquote,
-  blockquote p,
   .wf-merriweather-n7-active blockquote,
-  .wf-merriweather-n7-active blockquote p {
-    margin: 0 1.5em 1em 1.5em;
+  .wf-merriweather-n7-active blockquote {
+    margin: 0;
     padding-left: 0;
     border: none;
   }
 }
 
-/* line 24, sass/components/_blockquotes.scss */
+/* line 22, sass/components/_blockquotes.scss */
 .quote-source {
   display: block;
   color: #999;
   font-style: italic;
   /* Include a line break immediately before source */
 }
-/* line 30, sass/components/_blockquotes.scss */
+/* line 28, sass/components/_blockquotes.scss */
 .quote-source:before {
   content: '\A';
 }
@@ -1028,8 +1186,18 @@ blockquote p,
 }
 
 /* line 1, sass/components/_secondary-books.scss */
-.section-title {
-  font-family: Playfair Display;
+.secondary-book {
+  margin-top: 0;
+  margin-bottom: 32px;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+
+/* line 7, sass/components/_secondary-books.scss */
+.secondary-title {
+  font-family: Georgia, Times, serif;
   font-weight: 900;
   font-size: 2rem;
   line-height: 1.25;
@@ -1042,7 +1210,136 @@ blockquote p,
   padding-bottom: .5em;
 }
 
-/* line 26, sass/style.scss */
+/* line 22, sass/components/_secondary-books.scss */
+.secondary-book-image {
+  float: left;
+  margin-right: 2rem;
+  width: 7em;
+}
+
+/* line 28, sass/components/_secondary-books.scss */
+.secondary-book-text {
+  overflow: hidden;
+}
+/* line 30, sass/components/_secondary-books.scss */
+.secondary-book-text p {
+  font-size: 1em;
+}
+
+/* line 37, sass/components/_secondary-books.scss */
+.wf-lato-n3-active .secondary-title {
+  font-family: Playfair Display;
+}
+/* line 41, sass/components/_secondary-books.scss */
+.wf-lato-n3-active .secondary-book-title {
+  font-family: Lato;
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+/* line 46, sass/components/_secondary-books.scss */
+.wf-lato-n3-active .secondary-book-title a {
+  color: #0082f6;
+  letter-spacing: 1px;
+}
+/* line 52, sass/components/_secondary-books.scss */
+.wf-lato-n3-active .secondary-subtitle {
+  font-family: Lato;
+}
+
+/* line 1, sass/components/_buttons.scss */
+.button {
+  background-image: none;
+  display: inline-block;
+}
+/* line 5, sass/components/_buttons.scss */
+.button:hover {
+  background-image: none;
+}
+
+/* line 10, sass/components/_buttons.scss */
+.button-normal {
+  border: 1px solid #0082f6;
+  letter-spacing: .5px;
+  padding: .33em .875em;
+  text-transform: uppercase;
+  transition: transform 0.125s;
+  transition-timing-function: ease-out;
+}
+/* line 17, sass/components/_buttons.scss */
+.button-normal:hover {
+  color: #0082f6;
+  transform: matrix(1, 0, -0.2, 1, 0, 0);
+}
+
+/* line 23, sass/components/_buttons.scss */
+.button-super {
+  background-color: #0082f6;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.25em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  outline: 1px solid #76bfff;
+  padding: .25em .875em;
+  text-transform: uppercase;
+  transition: all 0.125s;
+  transition-timing-function: ease-out;
+}
+/* line 35, sass/components/_buttons.scss */
+.button-super:hover {
+  background-color: #0067c3;
+  border: 1px solid white;
+  color: #fff;
+  outline: 1px solid #003f76;
+}
+
+/* line 43, sass/components/_buttons.scss */
+.button-tiny {
+  background-color: #e1eaee;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #4a759d;
+  font-size: 12px;
+  font-family: Lato;
+  padding: 0px 10px;
+  text-transform: uppercase;
+}
+
+/* line 55, sass/components/_buttons.scss */
+.wf-lato-n3-active .button {
+  font-family: Lato;
+}
+
+/* line 1, sass/components/_typography.scss */
+.content p:first-of-type:first-letter {
+  font-family: Georgia, Times, serif;
+  font-size: 3em;
+}
+
+/* line 8, sass/components/_typography.scss */
+.wf-lato-n3-active .content p:first-of-type:first-letter {
+  font-family: Lato;
+  color: #b71909;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 0.9em;
+  float: left;
+  padding-right: 0.15em;
+}
+
+/* line 19, sass/components/_typography.scss */
+.acontent p:first-of-type:first-letter {
+  font-family: Lato;
+  color: #b71909;
+  font-size: 93px;
+  font-weight: 700;
+  line-height: 74px;
+  float: left;
+  padding-right: 6px;
+}
+
+/* line 31, sass/style.scss */
 .assistive-text {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);

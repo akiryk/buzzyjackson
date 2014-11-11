@@ -1,20 +1,45 @@
 @mixin usefont($font: Merriweather) {
   @if $font == Lato {
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: Lato;
   }
   
   @if $font == Merriweather {
-    font-family: Merriweather, Georgia, serif;
+    font-family: Merriweather;
   }
 
   @if $font == Playfair {
-    font-family: Playfair Display, Georgia, serif;
+    font-family: Playfair Display;
   }
 
 }
 
+@mixin backupfont($font: sans) {
+  @if $font == sans {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  @if $font == serif {
+    font-family: Georgia, Times, serif;
+  }
+}
+
+@mixin standard-margins {
+  margin-top: 0;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin bigger-margins {
+  margin-top: 0;
+  margin-bottom: 32px;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @mixin refined-link {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, $brand-blue 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 19px;

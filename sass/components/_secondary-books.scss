@@ -1,5 +1,11 @@
-.section-title {
-  font-family: Playfair Display;
+.secondary-book {
+  @include bigger-margins;
+  @extend .cf;
+  clear: both;
+}
+
+.secondary-title {
+  @include backupfont(serif);
   font-weight: 900;
   font-size: 2rem;
   line-height: 1.25;
@@ -10,4 +16,41 @@
   border-bottom: 1px solid #ccc;
   box-shadow: 0 1px 0 #fff;
   padding-bottom: .5em;
+}
+
+
+.secondary-book-image {
+  float: left;
+  margin-right: $base-spacing-unit;
+  width: 7em;
+}
+
+.secondary-book-text {
+  overflow: hidden;
+  p {
+    font-size: 1em;
+  }
+}
+
+.wf-lato-n3-active {
+
+  .secondary-title {
+    @include usefont(Playfair);
+  }
+
+  .secondary-book-title {
+    @include usefont(Lato);
+    font-size: 1em;
+    font-weight: 300; 
+    text-transform: uppercase; 
+    a {
+      color: $brand-blue;
+      letter-spacing: 1px;
+    }
+  }
+
+  .secondary-subtitle {
+    @include usefont(Lato);
+  }
+
 }

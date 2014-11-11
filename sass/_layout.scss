@@ -10,10 +10,11 @@
   margin: 1em;
   @include mq(desktop){
     margin: 0 auto;
-    // max-width: 62em;
+    max-width: 46rem;
   }
 }
-.entry-content {
+.entry-content,
+.entry-footer {
   max-width: 46em;
   margin: 0 auto 3rem auto;
   @include mq(desktop){
@@ -21,9 +22,9 @@
   }
 }
 
-.sub-wrapper-outer {
+.secondary-heros {
   @extend .cf;
-  background: #eee;
+  background: #f4f4f4;
   padding: 1.5em 1em;
 }
 

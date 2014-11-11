@@ -7,35 +7,42 @@
   text-transform: uppercase;
 }
 
-.callout-major {
-  background-color: $brand-gold;
-  color: #fff;
-}
 
-.callout-minor {
+.callout {
   line-height: 0.5;
   text-align: center;
 }
-.callout-minor span {
+.callout span {
   display: inline-block;
   position: relative;  
 }
-.callout-minor span:before,
-.callout-minor span:after {
+.callout span:before,
+.callout span:after {
   content: "";
   position: absolute;
   height: 5px;
+  border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  top: 0;
-  width: 100px;
+  top: 0.125rem;
+  width: 4rem;
 }
-.callout-minor span:before {
+.callout span:before {
   right: 100%;
   margin-right: 15px;
 }
-.callout-minor span:after {
+.callout span:after {
   left: 100%;
   margin-left: 15px;
+}
+
+.callout-major {
+  color: $brand-red;
+  font-size: 20/16 * 1em;
+  font-weight: 300;
+
+  span:before,
+  span:after {
+  }
 }
 
 .callout-meta {

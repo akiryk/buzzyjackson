@@ -1,12 +1,17 @@
 .connections-wrapper {
-  border-top: 1px solid #ccc;
+  border-top: 10px solid #eee;
+  @include mq(desktop){
+    margin-bottom: 30/16 * 1em;
+    margin-left: -112px;// -112/16 * 1em;
+    width: 960/16 * 1em;  
+  }
 }
 .connections {
   border-width: 1px;
   border-color: #ccc;
   float: right;
   width: 33.33333%;
-  padding-top: 1.5rem;
+  padding-top: 1.825em;
   padding-left: 0;
   padding-bottom: 1.5rem;
   margin-left: 1.5rem;
@@ -17,15 +22,13 @@
   @include mq(tablet){
     padding-bottom: 1.5rem;
     padding-top: 1rem;
-    width: 25%;
   }
   @include mq(desktop){
     border: none;
-    // margin-right: -7em;
     padding-right: 1em;
-    padding-top: 1.4rem;
+    padding-top: 1.825em;
     text-align: left;
-    width: auto;
+    width: 80/16 * 1em;
   }
   ul {
     list-style: none;

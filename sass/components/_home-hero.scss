@@ -1,0 +1,40 @@
+.home-hero {
+  .hero-image {
+    @include standard-margins;
+    max-width: 12rem;
+  }
+}
+
+.home-hero-intro {
+  margin-bottom: 2em;
+}
+
+.book-title {
+  @include standard-margins;
+  @include backupfont(serif);
+  text-align: center;
+  font-size: 3.375em;
+}
+
+.book-subtitle {
+  @extend h3;
+  @include standard-margins;
+  @include backupfont(sans);
+  margin-top: -.5em;
+}
+
+.wf-lato-n3-active {
+
+  .book-title {
+    @include usefont(Playfair);
+  }
+
+  .book-subtitle {
+    @include usefont(Lato);
+  }
+
+}
+
+.margin-block:last-child {
+  margin-bottom: 0;
+}

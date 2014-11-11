@@ -10,30 +10,29 @@
  * @package buzzyjackson_s
  */
 
-get_header(); ?>
+get_header(); 
+$postID = get_the_ID();
+?>
 
-  <div class="main-wrapper--outer">
-    <div class="main-wrapper--inner">
-      <section class="promo">
-
+    <section class="home-hero">
+      <div class="home-hero-intro centered-module">
         <?php 
-          $heroimage = get_post_meta( get_the_ID(), 'meta-image', true );
-          $url = get_post_meta( get_the_ID(), 'mb-landing-page-url', true );
+          $heroimage = get_post_meta( $postID, 'meta-image', true );
+          $url = get_post_meta( $postID, 'mb-landing-page-url', true );
           if( !empty( $heroimage ) ): ?>
-            <figure class="promo-image">
+            <figure class="hero-image margin-block">
               <?php if( !empty( $url ) ) { ?>
                 <a href="<?php echo $url; ?>"><img src="<?php echo $heroimage; ?>"/> </a>
               <?php } else { ?>
                 <img src="<?php echo $heroimage; ?>"/> 
               <?php } ?>
-              
             </figure>
         <?php endif; ?>
 
         <?php
-          $title = get_post_meta( get_the_ID(), 'mb-book-title-1', true );
+          $title = get_post_meta( $postID, 'mb-book-title-1', true );
           if( !empty( $title ) ): ?>
-            <h1 class="book-title--alpha">
+            <h1 class="book-title margin-block">
               <?php if( !empty( $url ) ) { ?>
                 <a href="<?php echo $url; ?>"><?php echo $title; ?></a>
               <?php } else { 
@@ -43,32 +42,28 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php
-          $subtitle = get_post_meta( get_the_ID(), 'mb-book-subheading-1', true );
+          $subtitle = get_post_meta( $postID, 'mb-book-subheading-1', true );
           if( !empty( $subtitle ) ): ?>
-            <div class="subtitle--alpha">
+            <div class="book-subtitle margin-block">
               <?php echo $subtitle; ?>
             </div>
         <?php endif; ?>
 
-        <div class="centered-module">
           <?php
-            $callout = get_post_meta( get_the_ID(), 'mb-callout-primary', true );
+            $callout = get_post_meta( $postID, 'mb-callout-primary', true );
             if( !empty( $callout ) ): ?>
-              <?php $callout_style = get_post_meta( get_the_ID(), 'mb-callout-style', true ); ?>
-              <div class="callout <?php echo $callout_style; ?>">
+              <?php $callout_style = get_post_meta( $postID, 'mb-callout-style', true ); ?>
+              <div class="callout <?php echo $callout_style; ?> margin-block">
                 <span><?php echo $callout; ?></span>
               </div>
             <?php endif; ?>
-            <?php $callout_secondary = get_post_meta( get_the_ID(), 'mb-callout-secondary', true ); ?>
+            <?php $callout_secondary = get_post_meta( $postID, 'mb-callout-secondary', true ); ?>
             <?php if( !empty( $callout_secondary ) ): ?>
-              <div class="callout-meta">
+              <div class="callout-meta margin-block">
                 <?php echo $callout_secondary; ?>
               </div>
             <?php endif; ?>
           </div>
-      </section>
-
-      <section class="content">  
         <div class="connections-wrapper">
           <div class="connections">
             <div class="connections__title">Connect</div>
@@ -78,57 +73,58 @@ get_header(); ?>
             </ul>
           </div>
         </div>
-        <div class="main-body">
+        <div class="home-hero-body">
 
           <?php while ( have_posts() ) : the_post(); ?>
             <?php  get_template_part( 'content', 'page' ); ?>
           <?php endwhile; // end of the loop. ?>
 
         </div><!-- .main-body -->
-      </section><!-- content -->
-    </div>
-  </div>
- <div class="sub-wrapper-outer">
-    <div class="sub-wrapper-inner">
-    <?php 
-      $secondary_title = get_post_meta( get_the_ID(), 'mb-secondary-title', true );
+    
+      </div>
+    </section><!-- content -->
+
+    <section class="secondary-heros">
+      <div class="site-content entry-content">
+      <?php 
+      $secondary_title = get_post_meta( $postID, 'mb-secondary-title', true );
       if( !empty( $secondary_title ) ): ?>
-        <h2 class="section-title">
+        <h2 class="secondary-title">
           <?php echo $secondary_title; ?>
         </h2>
       <?php endif; ?>
       
-      <section class="promo-beta-group">
-        <?php $books = get_post_meta( get_the_ID(), 'mb-secondary-books', true ); ?>
-        <?php foreach ($books as $book) { ?>
-          <div class="promo-beta">
-            <figure class="promo-image mini">
-              <a href="<?php echo $book['book-url']; ?>">
-                <img src="<?php echo $book['meta-image']; ?>" alt="Book Cover: <?php echo $book['title']; ?>" />
-              </a>
-            </figure>
-            <div class="beta-body">
-              <h2 class="book-title--beta">
-                <a href="<?php echo $book['book-url']; ?>"><?php echo $book['title']; ?></a>
-              </h2>
-              <div class="subtitle--beta"><?php echo $book['subtitle']; ?></div>
+      <?php $books = get_post_meta( $postID, 'mb-secondary-books', true ); ?>
+      <?php foreach ($books as $book) { ?>
+        <div class="secondary-book">
+          <figure class="secondary-book-image">
+            <a href="<?php echo $book['book-url']; ?>">
+              <img src="<?php echo $book['meta-image']; ?>" alt="Book Cover: <?php echo $book['title']; ?>" />
+            </a>
+          </figure>
+          <div class="secondary-book-text">
+            <h2 class="secondary-book-title">
+              <a href="<?php echo $book['book-url']; ?>"><?php echo $book['title']; ?></a>
+            </h2>
+            <div class="secondary-subtitle"><?php echo $book['subtitle']; ?></div>
+            <div class="secondary-book-description">
+            <p>
+              <?php echo $book['desc']; ?>
+            </p>
+            <div class="secondary-purchase">
+              <a class="button button-tiny" href="<?php echo $book['url']; ?>">Buy Now</a> 
             </div>
-            <div class="beta-desc">
-              <p>
-                <?php echo $book['desc']; ?>
-              </p>
-              <div class="purchase">
-                <a href="<?php echo $book['url']; ?>">Buy <?php echo $book['title']; ?></a> 
-              </div>
-            </div>
-          </div><!-- promo-beta -->
-        <?php } ?>
+          </div>
+          </div>
+        </div><!-- promo-beta -->
+      <?php } ?>
 
+        <footer class="entry-footer">
+          <?php edit_post_link( __( 'Edit', 'buzzyjackson_s' ), '<span class="edit-link">', '</span>' ); ?>
+        </footer><!-- .entry-footer -->
+      </div>
       </section>
     </div><!-- .sub-wrapper-inner -->
   </div><!-- .sub-wrapper-outer -->
-<footer class="entry-footer">
-  <?php edit_post_link( __( 'Edit', 'buzzyjackson_s' ), '<span class="edit-link">', '</span>' ); ?>
-</footer><!-- .entry-footer -->
 
 <?php get_footer(); ?>

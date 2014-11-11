@@ -1,4 +1,5 @@
 body {
+  @include backupfont(sans);
   line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
@@ -9,8 +10,10 @@ p {
   line-height: 1.35;
   a {
     @include refined-link;
+    color: $brand-blue;
     &:hover {
-      background-image: linear-gradient(to bottom, white 50%, #0082f6 50%);
+      background-image: linear-gradient(to bottom, white 50%, $text 50%);
+      color: $text;
     }
   }
 }
@@ -27,6 +30,10 @@ p {
   }
 }
 
+figure {
+  @include standard-margins;
+}
+
 img {
   max-width: 100%;
 }
@@ -39,7 +46,7 @@ html {
 }
 
 a {
-  color: #444;
+  color: $text;
   text-decoration: none;
  
   &:hover {

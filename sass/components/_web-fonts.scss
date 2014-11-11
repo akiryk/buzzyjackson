@@ -1,23 +1,4 @@
-h1 {
-  font-size: 2.25rem;
-  line-height: 1.125;
-  margin-bottom: .5rem;
-  @include mq(tablet){
-    font-size: 3.125rem;
-    line-height: 1.25;
-    margin-bottom: .75rem;
-  }
-}
-.wf-playfairdisplay-n9-active {
-  h1 {
-    @include usefont(Playfair);
-    letter-spacing: 1px;
-    font-weight: 900;
-    @include mq(tablet){
-      font-size: 3rem;
-    }
-  }
-}
+
  
 
 .wf-lato-n3-active {

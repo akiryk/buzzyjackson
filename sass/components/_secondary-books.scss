@@ -40,8 +40,9 @@
 
   .secondary-book-title {
     @include usefont(Lato);
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 300; 
+    margin-bottom: 0;
     text-transform: uppercase; 
     a {
       color: $brand-blue;
@@ -51,6 +52,9 @@
 
   .secondary-subtitle {
     @include usefont(Lato);
+    font-size: 1.125em;
+    font-weight: 300;
+    color: #666;
   }
 
 }

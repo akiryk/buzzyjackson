@@ -2,37 +2,60 @@
  * h1 through h6
  */
 
-h1,
-.alpha {
+h1 {
+  @include backupfont(serif);
   margin: 0;
   overflow-wrap: break-word;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   line-height: 1.125;
   margin-bottom: .5em;
+  text-align: center;
+
   @include mq(tablet){
-    font-size: 3.125rem;
+    font-size: 3.375em;
     line-height: 1.25;
     margin-bottom: .75rem;
   }
 }
 
-h2,
-.beta {
-  font-size: 1.5em;
-  margin: 0;
-  overflow-wrap: break-word;
+.blog h1 {
+  font-size: 2.5em;
 }
 
-h3, 
-.gamma {
-  font-size: 1.25em;
+.wf-playfairdisplay-n9-active {
+  h1 {
+    @include usefont(Playfair);
+    margin-top: 0;
+    margin-bottom: 1.375rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3.375em;
+  }
+  .blog h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    @include usefont(Playfair);
+  }
+}
+
+h2 {
+  font-size: 1.5em;
   margin: 0;
   margin-bottom: 1em;
   overflow-wrap: break-word;
 }
 
-h4,
-.delta {
+h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 1em;
+  overflow-wrap: break-word;
+}
+
+h4, h5, h6 {
   font-size: 1em;
   margin: 0;
+  margin-bottom: 1em;
 }

@@ -64,15 +64,10 @@ $postID = get_the_ID();
               </div>
             <?php endif; ?>
           </div>
-        <div class="connections-wrapper">
-          <div class="connections">
-            <div class="connections__title">Connect</div>
-            <ul class="connections__list">
-              <li><a class="connections__list--link facebook" href="www.facebook.com">Facebook</a></li>
-              <li><a class="connections__list--link twitter" href="www.facebook.com">Twitter</a></li>
-            </ul>
+          <div class="connections-wrapper">
+            <?php get_template_part( 'social' );           // facebook, twitter ?>
           </div>
-        </div>
+       
         <div class="home-hero-body">
 
           <?php while ( have_posts() ) : the_post(); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Book
+* Template Name: Book Main
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -16,17 +16,10 @@ $postID = get_the_ID();
 
     <section class="home-hero">
       <div class="home-hero-intro centered-module">
-        <?php 
-          $heroimage = get_post_meta( $postID, 'meta-image', true );
-          $url = get_post_meta( $postID, 'mb-landing-page-url', true );
-          if( !empty( $heroimage ) ): ?>
-            <figure class="hero-image">
-              <?php if( !empty( $url ) ) { ?>
-                <a href="<?php echo $url; ?>"><img src="<?php echo $heroimage; ?>"/> </a>
-              <?php } else { ?>
-                <img src="<?php echo $heroimage; ?>"/> 
-              <?php } ?>
-            </figure>
+        <?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it. ?>
+          <figure class="hero-image margin-block">
+            <?php the_post_thumbnail('medium'); ?>
+          </figure>
         <?php endif; ?>
 
         <?php the_title( sprintf( '<h1 class="book-title margin-block">', esc_url( get_permalink() ) ), '</h1>' ); ?>

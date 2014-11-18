@@ -6,19 +6,20 @@
   }
 }
 
-.site-content {
-  margin: 1em;
-  @include mq(desktop){
-    margin: 0 auto;
-    max-width: 46rem;
-  }
-}
 .entry-content,
 .entry-footer {
   max-width: 46em;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 2rem auto;
   @include mq(desktop){
     padding: 0 2em;
+  }
+}
+
+.entry-footer {
+  @include mq(desktop){
+    border-left: 1px solid #ddd;
+    margin-left: 2em;
+    padding: .5em 1em .001em 2em;
   }
 }
 

@@ -19,6 +19,14 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+				<div class="post-teaser">
+				<?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it. ?>
+          <figure class="margin-block featured-image">
+          	<a href="<?php echo get_permalink(); ?>">
+            	<?php the_post_thumbnail('large'); ?>
+            </a>
+          </figure>
+        <?php endif; ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
@@ -27,7 +35,7 @@ get_header(); ?>
 					 */
 					get_template_part( 'content', get_post_format() );
 				?>
-
+			</div><!-- end .post-teaser -->
 			<?php endwhile; ?>
 
 			<?php buzzyjackson_s_paging_nav(); ?>

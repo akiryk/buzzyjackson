@@ -18,7 +18,7 @@ function buzzyjackson_s_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'buzzyjackson_s' ); ?></h1>
+		<h1 class="assistive-text screen-reader-text"><?php _e( 'Posts navigation', 'buzzyjackson_s' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -62,35 +62,39 @@ function buzzyjackson_s_post_nav() {
 endif;
 
 if ( ! function_exists( 'buzzyjackson_s_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function buzzyjackson_s_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function buzzyjackson_s_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		// %s is the string. Add "Posted on" for example like this: 'Posted on %s'
+		// $posted_on = sprintf(
+		// 	_x( '%s', 'post date', 'buzzyjackson_s' ),
+		// 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		// );
+
+		$posted_on = sprintf(
+			_x( '%s', 'post date', 'buzzyjackson_s' ), $time_string );
+
+		$byline = sprintf(
+			_x( 'by %s', 'post author', 'buzzyjackson_s' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+		
+		echo $posted_on;
+
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'buzzyjackson_s' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		_x( 'by %s', 'post author', 'buzzyjackson_s' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
-
-}
 endif;
 
 if ( ! function_exists( 'buzzyjackson_s_entry_footer' ) ) :
@@ -101,6 +105,19 @@ function buzzyjackson_s_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
+		
+		/* Try to exclude uncategorized
+		foreach((get_the_category()) as $category) {
+	    if ($category->cat_name != 'uncategorized') {
+	   		$categories_list[] = $category;
+			}
+		}
+
+		if ( $categories_list && buzzyjackson_s_categorized_blog() ) {
+			$comma_separated = implode(", ", $categories_list);	
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'buzzyjackson_s' ) . '</span>', $categories_list );
+		} */
+
 		$categories_list = get_the_category_list( __( ', ', 'buzzyjackson_s' ) );
 		if ( $categories_list && buzzyjackson_s_categorized_blog() ) {
 			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'buzzyjackson_s' ) . '</span>', $categories_list );
@@ -119,7 +136,7 @@ function buzzyjackson_s_entry_footer() {
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', 'buzzyjackson_s' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'buzzyjackson_s' ), '<div class="edit-button-container">', '</div>' );
 }
 endif;
 

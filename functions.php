@@ -40,6 +40,11 @@ function buzzyjackson_s_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
   
+  /*
+   * Add image size(s) for special uses of featured image
+   *
+   */
+  add_image_size( $background, 1600, 1000 ); 
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -73,6 +78,27 @@ add_action( 'after_setup_theme', 'buzzyjackson_s_setup' );
 
 
 /**
+ * Remove <p> tags from around images
+ *
+ * @link http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
+ */
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+add_filter('the_content', 'filter_ptags_on_images');
+
+/**
+ * Remove width and height attr from images
+ */
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+function remove_width_attribute( $html ) {
+   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+   return $html;
+}
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -97,8 +123,6 @@ function buzzyjackson_s_scripts() {
 	wp_enqueue_style( 'buzzyjackson_s-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'font-scripts', get_template_directory_uri() . '/js/google-fonts.js', array(), '20141010', false );
-
-	wp_enqueue_script( 'buzzyjackson_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
   wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '201410', true);  
 
@@ -141,6 +165,12 @@ function my_mce_before_init( $settings ) {
         	'wrapper' => true
         ),
         array(
+          'title' => 'Remove initial cap',
+          'selector' => 'p',
+          'classes' => 'no-initial-cap',
+          'wrapper' => true
+        ),
+        array(
           'title' => 'Button Super',
           'selector' => 'a',
           'classes' => 'button button-super',
@@ -149,17 +179,6 @@ function my_mce_before_init( $settings ) {
         array(
           'title' => 'Button Normal',
           'selector' => 'a',
-          'classes' => 'button button-normal',
-          'wrapper' => false
-        ),
-        array(
-          'title' => 'Callout A',
-          'selector' => 'div',
-          'classes' => 'callout button-normal',
-          'wrapper' => false
-        ),
-        array(
-          'title' => 'Callout B',
           'classes' => 'button button-normal',
           'wrapper' => false
         )
@@ -187,7 +206,7 @@ function fb_mcekit_editor_style($url) {
 
     // Retrieves the plugin directory URL
     // Change the path here if using different directories
-    $url .= trailingslashit( plugin_dir_url( __FILE__ ) ) . '/editor-style.css';
+    $url .= trailingslashit( plugin_dir_url( __FILE__ ) ) . 'editor-style.css';
 
     return $url;
 }
@@ -227,44 +246,29 @@ function buzzyjackson_s_theme_customizer( $wp_customize ) {
 add_action('customize_register', 'buzzyjackson_s_theme_customizer');
 
 
-// THIS GIVES US SOME OPTIONS FOR STYLING THE ADMIN AREA
-function custom_colors() {
-   echo '<style type="text/css">
-        #mceu_39-text { 
-        	background-color:#33bdef;
-        	-moz-border-radius:6px;
-        	-webkit-border-radius:6px;
-        	border-radius:6px;
-        	border:1px solid #057fd0;
-        	display:inline-block;
-        	cursor:pointer;
-        	color:#ffffff;
-        	padding:6px 24px;
-        	text-decoration:none;
-        }
-        #mceu_40-text { 
-         font-style: italic;
-         color: #000;
-         font-family: sans-serif;
-        }
-         </style>';
+/**
+ * Enable svg uploads
+ */
+// function cc_mime_types($mimes) {
+//   $mimes['svg'] = 'image/svg+xml';
+//   return $mimes;
+// }
+// add_filter('upload_mimes', 'cc_mime_types');
+
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+
+function custom_upload_mimes ( $existing_mimes=array() ) {
+
+  // add the file extension to the array
+
+  $existing_mimes['svg'] = 'mime/type';
+
+        // call the modified list of extensions
+
+  return $existing_mimes;
+
 }
-
-add_action('admin_head', 'custom_colors');
-
-
-
-
-function my_scripts_method() {
-  wp_enqueue_script(
-    'custom-script',
-    get_stylesheet_directory_uri() . '/js/custom_script.js',
-    array( 'jquery' )
-  );
-}
-
-add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
-
 
 /**
  * Implement the Custom Header feature.

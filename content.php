@@ -3,7 +3,6 @@
  * @package buzzyjackson_s
  */
 ?>
-
 	<header class="entry-header">
 		<?php 
 
@@ -38,7 +37,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php buzzyjackson_s_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -82,6 +82,7 @@ class AK_Nav_Walker extends Walker {
    * @param int    $id     Current item ID.
    */
   public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
     $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -113,7 +114,7 @@ class AK_Nav_Walker extends Walker {
      * @param array  $args    An array of wp_nav_menu() arguments.
      */
     $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-    $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+    $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';    
 
     $output .= $indent . '<li' . $id . $class_names .'>';
 
@@ -151,12 +152,31 @@ class AK_Nav_Walker extends Walker {
       }
     }
 
+    $thumbnail_markup = '';
+
     $item_output = $args->before;
-    $item_output .= '<a'. $attributes .'>';
-    /** This filter is documented in wp-includes/post-template.php */
-    $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-    $item_output .= '</a>';
-    $item_output .= $args->after;
+
+    if( $depth == 1 && $id = has_post_thumbnail( (int)$item->object_id ) ) {
+      $subtitle = get_post_meta( (int)$item->object_id , 'mb-book-subheading-1', true );
+      $item_output .= '<a'. $attributes . 'class="nav-thumbnail-wrapper"' . '>';
+      $thumbnail_markup .= '<div class="nav-thumbnail">';
+      $thumbnail_markup .= get_the_post_thumbnail( (int)$item->object_id, 'thumbnail' );
+      $thumbnail_markup .= '</div>';
+      $item_output .= $thumbnail_markup;
+      $item_output .= '<div class="thumb-text"><div class="thumb-title">';
+      /** This filter is documented in wp-includes/post-template.php */
+      $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+      $item_output .= '</div>';
+      $item_output .= '<div class="thumb-subtitle">' . $subtitle . '</div></div>';
+      $item_output .= '</a>';
+      $item_output .= $args->after;
+    } else {
+      $item_output .= '<a'. $attributes .'>';
+      /** This filter is documented in wp-includes/post-template.php */
+      $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+      $item_output .= '</a>';
+      $item_output .= $args->after;
+    }
 
     /**
      * Filter a menu item's starting output.

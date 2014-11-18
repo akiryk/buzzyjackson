@@ -1,31 +1,49 @@
 /** These styles are used in your backend editor. **/
+/* red: #b71909 */
+/*blue: #0082f6 */
 
 blockquote {
   font-style: italic;
 }
 
-.callout {
-  display: block;
-  background: gray;
-  padding: 1em;
+.button {
+  font-family: sans-serif;
+  background-image: none;
+  display: inline-block;
 }
 
-.quote-title{
-  margin-left: 40px;
+.button-normal {
+  background: #ffffff;
+  border: 1px solid #0082f6;
+  letter-spacing: .5px;
+  padding: .33em .875em;
   text-transform: uppercase;
-  color: #bd2819;
-  font-family: sans-serif;
-  font-weight: bold;
+}
+
+.button-super {
+  background-color: #0082f6;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.25em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  outline: 1px solid lighten(#0082f6, 25%);
+  padding: .25em .875em;
+  text-transform: uppercase;
+}
+
+a.button {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .quote-source {
-  color: #aaa;
+  color: #999;
 }
 
-#mceu_42-text {
-  color: blue;
-}
-
-.mce-text {
-  color: red;
+.quote-title {
+  color: #b71909;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }

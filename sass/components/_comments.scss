@@ -1,0 +1,57 @@
+/* 
+ * Comments
+ */
+
+.comments-wrapper {
+  background: #f4f4f4;
+}
+
+.comments-area {
+  padding: 2em;
+  margin: 1em;
+  @include mq(desktop){
+    margin: 0 auto;
+    max-width: 46rem;
+  }
+}
+
+.comment-content {
+  font-size: 1rem;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-author {
+  display: flex;
+  align-content: center;
+  .fn {
+    margin-right: .5em;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.logged-in-as,
+.comment-form-comment label,
+.form-allowed-tags {
+  display: none;
+}
+
+input[type=submit] {
+  @extend .button;
+  @extend .button-normal;
+  background-color: #fff;
+  color: $brand-blue;
+}
+
+.wf-lato-n3-active {
+  .comment-author {
+    @include usefont(Lato);
+  }
+}

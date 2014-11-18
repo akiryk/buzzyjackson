@@ -1,18 +1,84 @@
+.post-teaser {
+  margin: 1em;
+  @include mq(desktop){
+    margin: 0 auto;
+    max-width: 46rem;
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    @include mq(desktop){
+      margin-left: -112/16 * 1em;
+      width: 960/16 * 1em;  
+      border-bottom: 10px solid #eee;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
 .entry-title {
   @include standard-margins;
-  @include backupfont(serif);
-  text-align: left;
-  font-size: 2.75em;
+}
+
+.entry-date {
+  color: $brand-red;
+  font-size: .75em;
+  text-transform: uppercase;
+}
+
+.post-title-wide {
+  max-width: 64rem;
 }
 
 .blog .entry-header {
   padding: 0 2em;
 }
 
-.wf-lato-n3-active {
+.timestamp {
+  @extend .callout;
+  margin-bottom: 0;
+}
 
-  .entry-title {
-    @include usefont(Playfair);
+.timestamp span:before,
+.timestamp span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #ccc;
+  border-top: none;
+  top: 0.125rem;
+  width: 24rem;
+}
+
+h1.hed-section,
+h2.hed-section,
+h3.hed-section,
+h4.hed-section,
+h5.hed-section,
+h6.hed-section {
+  @extend h3;
+  @include standard-margins;
+  @include backupfont(sans);
+}
+
+.cat-links,
+.tags-links {
+  color: #999;
+  display: block;
+  font-style: italic;
+  margin-bottom: 1rem;
+  a {
+    color: $baby-blue;
+    &:hover {
+      color: $brand-blue;
+    }
   }
+}
 
+.wf-merriweather-i4-active {
+  .cat-links,
+  .tags-links { 
+    @include usefont(Merriweather);
+  }
 }

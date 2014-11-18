@@ -1,0 +1,38 @@
+/*
+ * Images
+ */
+
+.alignleft {
+  float: left;
+  margin: 0 1.5em 1em 0;
+  width: 33.33333%;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1em 1.5em;
+  width: 33.33333%;
+}
+
+.full-width-image {
+  height: 500/16 * 1em;
+  background-size: cover;
+  margin-bottom: 1em;
+}
+
+.overlay .nav-thumbnail-wrapper {
+  display: flex;
+  align-content: center;
+}
+
+.nav-thumbnail {
+  margin-right: 1em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    margin-left: -1em;
+    max-width: none;
+  }
+}

@@ -1,0 +1,13 @@
+/*
+ * Pagination 
+ */
+
+.paging-navigation {
+  margin: 1em;
+  @include mq(desktop){
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 46rem;
+  }
+}
+ 

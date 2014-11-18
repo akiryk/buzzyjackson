@@ -1,4 +1,9 @@
 .home-hero {
+  margin: 1em;
+  @include mq(desktop){
+    margin: 0 auto;
+    max-width: 46rem;
+  }
   .hero-image {
     @include standard-margins;
     max-width: 12rem;
@@ -23,16 +28,16 @@
   margin-top: -.5em;
 }
 
-.wf-lato-n3-active {
-
+.wf-playfairdisplay-n9-active {
   .book-title {
     @include usefont(Playfair);
   }
-
+}
+.wf-lato-n3-active {
   .book-subtitle {
     @include usefont(Lato);
+    font-weight: 300;
   }
-
 }
 
 .margin-block:last-child {

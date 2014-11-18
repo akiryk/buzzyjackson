@@ -18,8 +18,10 @@ p {
   }
 }
 
-.wf-merriweather-n7-active {
-  p {
+.wf-merriweather-n4-active {
+  p,
+  ul,
+  ol {
     @include usefont(Merriweather);
     font-size: 1.125em;
     letter-spacing: 0;
@@ -27,6 +29,12 @@ p {
   }
   .promo-beta p {
     font-size: 1em;
+  }
+}
+
+.wf-lato-n3-active {
+  body {
+    @include usefont(Lato);
   }
 }
 
@@ -48,10 +56,15 @@ html {
 a {
   color: $text;
   text-decoration: none;
- 
+  transition: all .25s;
   &:hover {
     color: $brand-blue;
   }
+}
+
+// figure and images
+.featured-image {
+  text-align: center;
 }
 
 .cf{

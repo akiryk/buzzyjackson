@@ -1,5 +1,8 @@
 jQuery(document).ready(function($) {
   
+  /**
+  * Overlay Navigation
+  */
   var handler = function(e){
     $(this).off();
     $overlay = $(this).find('.overlay');
@@ -40,3 +43,5 @@ jQuery(document).ready(function($) {
     }, false );
   }
 })();
+
+

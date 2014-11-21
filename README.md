@@ -17,3 +17,4 @@ When setting up this theme from scratch
    The menu items should be books, blog, news, bio/contact
 6. Go to settings > reading and set front page to "static" 
    Make front page "home page", the page set to Home Main template.
+7. In book pages, move Featured Image up.

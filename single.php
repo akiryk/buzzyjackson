@@ -20,8 +20,9 @@ get_header();
       <?php // use featured as a background image in css ?>
       <?php $placement = get_post_meta( $post->ID, 'mb-image-placement', true ); ?>
       <div class="full-width-image" style="background-image:url(<?php echo $url; ?>); background-position-y:<?php echo $placement; ?>"></div>
-       <?php the_title( sprintf( '<h1 class="book-title post-title-wide margin-block">', esc_url( get_permalink() ) ), '</h1>' ); ?>
-       <section class="home-hero centered-module">
+       <?php the_title( sprintf( '<h1 class="post-title post-title-wide margin-block">', esc_url( get_permalink() ) ), '</h1>' ); ?>
+       <section class="home-hero">
+        <div class="centered-module">
     <?php } else { ?>
       <?php // use featured image as a normal image ?>
     <section class="home-hero">

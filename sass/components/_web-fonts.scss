@@ -1,55 +1,16 @@
 
- 
 
-.wf-lato-n3-active {
-  .book-title--beta {
-    @include usefont(Lato);
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-  .navigation-primary {
-    @include usefont(Lato); 
-    font-weight: 300;
-  }
-  ul.nav-list--horizontal li {
-    font-weight: 300;
-  }
-  .subtitle--alpha {
-    @include usefont(Lato);
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 1.35;
-    color: #333;
-    @include mq(tablet){
-      font-size: 26px;
-      line-height: 1.25;
-    }
-  }
-  .connections__title {
-    @include usefont(Lato);
-  }
-
-  .connections__list--link {
-    @include usefont(Lato);
-  }
-  .quote-title {
-    @include usefont(Lato);
-    font-size: .9375em;
-  }
-
-  .purchase {
-    @include usefont(Lato);
-    font-size: 14px;
-    a {
-      color: #666;
-    }
-    a.divided {
-      padding-left: 10px;
-      margin-left: 10px;
-      border-left: 1px solid #999;
-    }
-  }
-}
+//   .purchase {
+//     @include usefont(sans);
+//     font-size: 14px;
+//     a {
+//       color: #666;
+//     }
+//     a.divided {
+//       padding-left: 10px;
+//       margin-left: 10px;
+//       border-left: 1px solid #999;
+//     }
+//   }
+// }
 

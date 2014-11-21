@@ -4,54 +4,71 @@
 
 h1 {
   @include backupfont(serif);
-  margin: 0;
   overflow-wrap: break-word;
   font-size: 2.5rem;
   line-height: 1.125;
-  margin-bottom: .5em;
-  text-align: center;
-
-  @include mq(tablet){
-    font-size: 3.375em;
-    line-height: 1.25;
-    margin-bottom: .75rem;
-  }
 }
-
-.blog h1 {
-  font-size: 2.5em;
-}
-
 .wf-playfairdisplay-n9-active {
   h1 {
-    @include usefont(Playfair);
-    margin-top: 0;
-    margin-bottom: 1.375rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 3.375em;
-  }
-  .blog h1 {
-    font-size: 2.5em;
-  }
-  h2 {
-    @include usefont(Playfair);
-  }
+    @include usefont(fancy);
+  } 
 }
 
-h2 {
-  font-size: 1.5em;
-  margin: 0;
-  margin-bottom: 1em;
-  overflow-wrap: break-word;
-}
+// h1 {
+//   @include backupfont(serif);
+//   overflow-wrap: break-word;
+//   font-size: 2.5rem;
+//   line-height: 1.125;
+//   margin-bottom: .5em;
+//   text-align: center;
+
+//   @include mq(tablet){
+//     font-size: 3.375em;
+//     line-height: 1.25;
+//     margin-bottom: .75rem;
+//   }
+// }
+
+// .blog h1 {
+//   font-size: 2em;
+//   @include mq(tablet){
+//     font-size: 2.5em;  
+//   }
+  
+// }
+
+// .wf-playfairdisplay-n9-active {
+//   h1 {
+//     @include main-title;
+//     @include usefont(fancy);
+//   }
+//   .blog h1 {
+//     font-size: 2em;
+//     @include mq(tablet){
+//       font-size: 2.5em;  
+//     }
+//   }
+//   h2 {
+//     @include usefont(fancy);
+//   }
+// }
+
+// h2 {
+//   font-size: 1.5em;
+//   margin: 0;
+//   margin-bottom: 1em;
+//   overflow-wrap: break-word;
+// }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 700;
   margin: 0;
   margin-bottom: 1em;
   overflow-wrap: break-word;
+  @include mq(tablet){
+    font-size: 1.5em;
+  }
 }
 
 h4, h5, h6 {

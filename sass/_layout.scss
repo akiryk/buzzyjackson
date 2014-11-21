@@ -15,7 +15,7 @@
   }
 }
 
-.entry-footer {
+.post .entry-footer {
   @include mq(desktop){
     border-left: 1px solid #ddd;
     margin-left: 2em;

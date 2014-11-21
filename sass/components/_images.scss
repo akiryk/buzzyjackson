@@ -14,25 +14,18 @@
   width: 33.33333%;
 }
 
+img.aligncenter {
+  display: block;
+  margin: 1em auto;
+}
+
 .full-width-image {
   height: 500/16 * 1em;
   background-size: cover;
   margin-bottom: 1em;
 }
 
-.overlay .nav-thumbnail-wrapper {
-  display: flex;
-  align-content: center;
-}
-
-.nav-thumbnail {
-  margin-right: 1em;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-  overflow: hidden;
-  img {
-    margin-left: -1em;
-    max-width: none;
-  }
+.wp-caption-text {
+  color: #999;
+  text-align: center;
 }

@@ -59,9 +59,9 @@
 
 .wf-lato-n3-active {
   .callout {
-    @include usefont(Lato);
+    @include usefont(sans);
   }
   .callout-meta {
-    @include usefont(Lato);
+    @include usefont(sans);
   }
 }

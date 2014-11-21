@@ -10,9 +10,7 @@
  *
  * @package buzzyjackson_s
  */
-
 get_header(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php if ( have_posts() ) : ?>
@@ -37,7 +35,6 @@ get_header(); ?>
 				?>
 			</div><!-- end .post-teaser -->
 			<?php endwhile; ?>
-
 			<?php buzzyjackson_s_paging_nav(); ?>
 
 		<?php else : ?>
@@ -48,6 +45,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+ 
 <?php get_footer(); ?>

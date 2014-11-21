@@ -72,31 +72,9 @@ ul.nav-menu li {
 
 .wf-lato-n3-active {
   .menu-item {
-    @include usefont(Lato);
+    @include usefont(sans);
   }
 }
-
-// ul.nav-menu ul.show {
-//   background-color: rgba(0,0,0,0.8);
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: 9999;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   margin: 0;
-//   li {
-//     padding-left: 0;
-//     a {
-//       color: white;
-//       font-size: 3rem;
-//       text-transform: capitalize;
-//     }
-//   }
-// }
 
 /* Overlay style */
 .overlay {
@@ -105,48 +83,65 @@ ul.nav-menu li {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(0,0,0,0.825);
   z-index: 1011;
 }
 
 /* Overlay closing cross */
 .overlay .overlay-close {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #ccc;
   width: 2em;
   height: 2em;
   position: absolute;
-  right: 2em;
-  top: 4em;
+  right: 1em;
+  top: 1em;
   overflow: hidden;
-  border: none;
-  background: url(images/close-button-3px.svg) no-repeat center center;
+  background-image: url(images/close-button-3px.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
   text-indent: 200%;
+  transition: border-color .25s;
   color: transparent;
   outline: none;
   z-index: 100;
+  &:hover {
+    border-color: #555;
+  }
 }
 
 /* Menu style */
-.overlay nav {
+.overlay .secondary-nav {
   text-align: center;
   position: relative;
-  top: 50%;
-  height: 60%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  @include mq(tablet){
+    top: 25%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);  
+  }
+  @include mq(desktop){
+    top: 45%;
+  }
+  
 }
 
-.overlay ul {
+.sub-menu {
   list-style: none;
-  padding: 0;
-  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 2.125em rgba(0,0,0,0.1);
   display: inline-block;
   height: 100%;
+  margin: 0 auto;
+  padding: 3em 3em 3em 2em;
   position: relative;
 }
 
 .overlay ul li {
   display: block;
   padding-left: 0;
+  max-width: 30em;
 }
 
 .overlay ul li:first-of-type {
@@ -154,8 +149,8 @@ ul.nav-menu li {
 }
 
 .overlay ul li a {
-  font-size: 2em;
-  font-weight: 100;
+  font-size: 1.25rem;
+  font-weight: 300;
   display: block;
   color: #111;
   -webkit-transition: color 0.2s;
@@ -167,6 +162,50 @@ ul.nav-menu li {
 .overlay ul li a:focus {
   background-image: none;
   color: $brand-blue;
+}
+
+.sub-menu .menu-item {
+  margin-bottom: 2rem;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.overlay .nav-thumbnail-wrapper {
+  display: flex;
+  align-content: center;
+}
+
+.nav-thumbnail {
+  margin-right: 1em;
+  min-width: 4rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    margin-left: -1em;
+    max-width: none;
+    transition: margin .25s ease-out;
+  }
+}
+
+.sub-menu a:hover img {
+  margin-left: -2.5em;
+}
+
+.thumb-text {
+  text-align: left;
+}
+
+.thumb-title {
+}
+
+.thumb-subtitle {
+  clear: left;
+  color: #999;
+  text-transform: capitalize;
+  font-size: .825em;
 }
 
 /* Effects */
@@ -184,12 +223,13 @@ ul.nav-menu li {
   transition: opacity 0.5s;
 }
 
-.overlay-hugeinc nav {
+.secondary-nav {
   -webkit-perspective: 1200px;
   perspective: 1200px;
+  white-space: normal;
 }
 
-.overlay-hugeinc nav ul {
+.sub-menu {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
   transform: translateY(-25%) rotateX(35deg);
@@ -197,40 +237,15 @@ ul.nav-menu li {
   transition: transform 0.5s, opacity 0.5s;
 }
 
-.overlay-hugeinc.open nav ul {
+.overlay-hugeinc.open .sub-menu {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-.overlay-hugeinc.close nav ul {
+.overlay-hugeinc.close .sub-menu {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
-}
-
-.overlay .sub-menu {
-  background-color: #fff;
-  box-shadow: 0 0 2.125em rgba(0,0,0,0.1);
-  padding: 3em;
-}
-
-.nav-thumbnail {
-  margin-right: 1em;
-  width: 2em;
-}
-
-.thumb-text {
-  text-align: left;
-}
-
-.thumb-title {
-  color: brown;
-  @include mymixin;
-}
-
-.thumb-subtitle {
-  clear: left;
-  text-transform: capitalize;
 }
 
 @media screen and (max-height: 30.5em) {

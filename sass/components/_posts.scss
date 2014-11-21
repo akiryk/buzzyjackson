@@ -15,6 +15,10 @@
       margin-bottom: 3rem;
     }
   }
+
+  .entry-title {
+    text-align: left;
+  }
 }
 
 .entry-title {
@@ -27,12 +31,35 @@
   text-transform: uppercase;
 }
 
+.post-title {
+  margin-bottom: .5em;
+  text-align: center;
+
+  @include mq(tablet){
+    font-size: 3.375em;
+    line-height: 1.25;
+    margin-bottom: .75rem;
+  }
+}
+
 .post-title-wide {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 64rem;
 }
 
-.blog .entry-header {
-  padding: 0 2em;
+.blog .entry-header,
+.archive .entry-header {
+  @include mq(desktop){
+    padding: 0 2em;
+  }
+}
+
+.archive {
+  .page-title {
+    color: $brand-red;
+    text-transform: capitalize;
+  }
 }
 
 .timestamp {
@@ -45,10 +72,14 @@
   content: "";
   position: absolute;
   height: 5px;
-  border-bottom: 1px solid #ccc;
   border-top: none;
+  border-bottom: none;
   top: 0.125rem;
-  width: 24rem;
+  @include mq(tablet){
+    border-bottom: 1px solid #ccc;
+    width: 24rem;  
+  }
+  
 }
 
 h1.hed-section,
@@ -69,16 +100,28 @@ h6.hed-section {
   font-style: italic;
   margin-bottom: 1rem;
   a {
-    color: $baby-blue;
+    color: $brand-blue;
     &:hover {
-      color: $brand-blue;
+      color: darken($brand-blue, 20%);
     }
+  }
+}
+
+.book-review-intro {
+  color: #777;
+}
+
+.wf-lato-n4-active {
+  .book-review-intro {
+    font-family: Lato;
+    font-size: 1em;
+    color: #777;
   }
 }
 
 .wf-merriweather-i4-active {
   .cat-links,
   .tags-links { 
-    @include usefont(Merriweather);
+    @include usefont(serif);
   }
 }

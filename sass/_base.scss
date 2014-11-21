@@ -18,11 +18,15 @@ p {
   }
 }
 
+iframe {
+  margin: 1em auto;
+}
+
 .wf-merriweather-n4-active {
   p,
   ul,
   ol {
-    @include usefont(Merriweather);
+    @include usefont(serif);
     font-size: 1.125em;
     letter-spacing: 0;
     line-height: 1.5;
@@ -34,7 +38,7 @@ p {
 
 .wf-lato-n3-active {
   body {
-    @include usefont(Lato);
+    @include usefont(sans);
   }
 }
 

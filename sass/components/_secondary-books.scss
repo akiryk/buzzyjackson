@@ -16,45 +16,96 @@
   border-bottom: 1px solid #ccc;
   box-shadow: 0 1px 0 #fff;
   padding-bottom: .5em;
+  @include mq(tablet){
+
+  }
 }
 
 
 .secondary-book-image {
-  float: left;
-  margin-right: $base-spacing-unit;
-  width: 7em;
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+  overflow: hidden;
+  @include mq(tablet){
+    border-radius: initial;
+    float: left;
+    margin-right: $base-spacing-unit;
+    height: auto;
+    width: 7em;
+  }
 }
 
 .secondary-book-text {
   overflow: hidden;
+  text-align: center;
   p {
-    font-size: 1em;
+    font-size: 1.125em;
+  }
+  @include mq(tablet){
+    text-align: left;
+  }
+}
+
+.secondary-book-description {
+  padding: 0 1em;
+  text-align: left;
+  @include mq(tablet){
+    padding: 0;
+  }
+}
+
+.wf-merriweather-n4-active {
+  .secondary-book-text {
+    overflow: hidden;
+    p {
+      font-size: 1.125em;
+    }
+  }
+}
+
+.secondary-book-title {
+  @include backupfont(sans);
+  line-height: 1.3;
+  margin-bottom: 0.125em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.secondary-subtitle {
+  font-size: 1.125em;
+  font-weight: 300;
+  line-height: 1.35;
+  color: #666;
+  @include mq(tablet){
+    font-size: 1.5em;
+    font-weight: 300; 
+    line-height:1.5;
   }
 }
 
 .wf-lato-n3-active {
-
   .secondary-title {
-    @include usefont(Playfair);
+    @include usefont(fancy);
   }
 
   .secondary-book-title {
-    @include usefont(Lato);
-    font-size: 1.5em;
-    font-weight: 300; 
-    margin-bottom: 0;
-    text-transform: uppercase; 
+    @include usefont(sans);
+    font-size: 1em;
+    font-weight: 400; 
+     
     a {
       color: $brand-blue;
       letter-spacing: 1px;
     }
+    @include mq(tablet){
+      font-size: 1.5em;
+      font-weight: 300; 
+    }
   }
 
   .secondary-subtitle {
-    @include usefont(Lato);
-    font-size: 1.125em;
-    font-weight: 300;
-    color: #666;
+    @include usefont(sans);
   }
 
 }

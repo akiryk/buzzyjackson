@@ -171,6 +171,24 @@ function my_mce_before_init( $settings ) {
           'wrapper' => true
         ),
         array(
+          'title' => 'Pull Quote Left',
+          'selector' => 'p',
+          'classes' => 'pull-quote pull-left',
+          'wrapper' => true
+        ),
+        array(
+          'title' => 'Pull Quote Right',
+          'selector' => 'p',
+          'classes' => 'pull-quote push-right',
+          'wrapper' => true
+        ),
+        array(
+          'title' => 'Book Review Intro',
+          'selector' => 'p',
+          'classes' => 'book-review-intro',
+          'wrapper' => true
+        ),
+        array(
           'title' => 'Button Super',
           'selector' => 'a',
           'classes' => 'button button-super',
@@ -180,6 +198,12 @@ function my_mce_before_init( $settings ) {
           'title' => 'Button Normal',
           'selector' => 'a',
           'classes' => 'button button-normal',
+          'wrapper' => false
+        ),
+        array(
+          'title' => 'Buy Link',
+          'selector' => 'a',
+          'classes' => 'buy-link',
           'wrapper' => false
         )
     );
@@ -299,3 +323,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom navigation
  */
 require_once (get_template_directory() . '/inc/custom-nav.php');
+
+/**
+ * Custom comments
+ */
+require_once (get_template_directory() . '/inc/custom-comments.php');

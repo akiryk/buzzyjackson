@@ -43,15 +43,23 @@
   display: none;
 }
 
+.comment-edit-link {
+  @extend .buy-link;
+}
+
+.comment-reply-link {
+  @extend .buy-link;
+}
+
 input[type=submit] {
   @extend .button;
   @extend .button-normal;
-  background-color: #fff;
+  background-color: transparent;
   color: $brand-blue;
 }
 
 .wf-lato-n3-active {
   .comment-author {
-    @include usefont(Lato);
+    @include usefont(sans);
   }
 }

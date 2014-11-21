@@ -1,15 +1,19 @@
 .button {
   @include backupfont(sans);
   background-image: none;
-  display: inline-block;
+  display: block;
+  margin-bottom: 1em;
 
   &:hover {
     background-image: none;
   }
+
+  @include mq(tablet){
+    display: inline-block;
+  }
 }
 
 .button-normal {
-  background: #ffffff;
   border: 1px solid $brand-blue;
   letter-spacing: .5px;
   padding: .33em .875em;
@@ -18,7 +22,7 @@
   transition-timing-function: ease-out;
   &:hover {
     color: $brand-blue;
-    background:#F2F6FF;
+    transform:scale(1.025);
     // transform: matrix(1, 0, -0.2, 1, 0, 0);
   }
 }
@@ -39,6 +43,7 @@
     background-color: darken($brand-blue, 10%);
     border: 1px solid white;
     color: #fff;
+    transform:scale(1.025);
     outline: 1px solid darken($brand-blue, 25%);
   }
 }
@@ -57,9 +62,40 @@
   }
 }
 
+.buy-link {
+  @include backupfont(sans);
+  background-color: $brand-blue;
+  border: 1px solid #fff;
+  color: #fff;
+  color: rgba(255,255,255,0.9);
+  background-image: none;
+  padding: .5em;
+  display: block;
+  text-align: center;
+
+  @include mq(tablet) {
+    background-color: transparent;
+    color: $brand-blue;
+    border-right: 1px solid #ccc;
+    display: inline;
+    margin-right: 1em;
+    padding-right: 1em;
+    text-align: left;
+    &:last-of-type {
+      border-right: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  &:hover {
+    background-image: none;
+  }
+}
+
 .wf-lato-n3-active {
   .button {
-    @include usefont(Lato);
+    @include usefont(sans);
   }
 }
 

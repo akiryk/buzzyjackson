@@ -1,0 +1,67 @@
+.pull-quote {
+  font-weight: 700;
+  margin-top: 0;
+  width: 100%;
+  float: none;
+
+  @include mq(tablet){
+    font-size: 1.625em;
+    font-weight: 300;
+    width: 45%;
+  }
+
+  @include mq(desktop){
+    margin-top: 1em;
+    width: 18em;
+  }
+
+  .quote-source {
+    font-size: .75em;
+    font-style: normal;
+    margin-top: .25em;
+  }
+}
+
+.pull-left {
+  float: left;
+  margin-right: 32/24 * 1em;
+
+  @include mq(desktop){
+    margin-left: -144/24 * 1em;
+  }
+}
+
+.push-right {
+  float: right;
+  margin-left: 32/24 * 1em;
+  @include mq(desktop){
+    margin-right: -144/24 * 1em;
+  }
+}
+
+
+.wf-merriweather-n4-active {
+  .pull-quote {
+    font-size: 1.3em;
+    @include mq(tablet){
+      font-size: 1.5em;
+    }
+  } 
+}
+
+.wf-playfairdisplay-n9-active {
+  .page .pull-quote:first-letter {
+    @include mq(desktop){
+      @include usefont(fancy);
+      color: $brand-red;
+      font-size: 58/16 * 1rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 48/16 * 1rem;
+      float: left;
+      font-size: 132/16 * 1rem;
+      line-height: 92/16 * 1rem;
+      padding-right: 12/16 * 1rem;
+    }
+  }
+}

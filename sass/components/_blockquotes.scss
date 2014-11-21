@@ -6,16 +6,14 @@
   text-transform: uppercase;
 }
 
-blockquote,
-.wf-merriweather-n7-active blockquote,
-.wf-merriweather-n7-active blockquote {
-  margin: 0 0 1em 0;
-  padding-left: 1em;
-  border-left: 1px solid #ccc;
+blockquote {
+  background-color: #fff; //#FFFEF9;
+  box-shadow: 0 0 2.125em rgba(0,0,0,0.075);
+  margin: 2em 0;
+  padding: .5em 1em 1em;
   @include mq(tablet){
-    margin:0;
-    padding-left: 0;
-    border: none;
+    border: 1px solid #fff;
+    padding: 0.5em 2em 2.5em;
   }
 }
 
@@ -27,5 +25,12 @@ blockquote,
   /* Include a line break immediately before source */
   &:before {
     content: '\A'; 
+  }
+}
+
+.wf-lato-n3-active {
+  .quote-title {
+    @include usefont(sans);
+    font-size: .9375em;
   }
 }

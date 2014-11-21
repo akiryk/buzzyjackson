@@ -12,13 +12,31 @@
 
 .home-hero-intro {
   margin-bottom: 2em;
+  padding: 0 3%;
+  @include mq(desktop){
+    padding: 0;
+  }
 }
 
-.book-title {
-  @include standard-margins;
-  @include backupfont(serif);
+// .book-title {
+//   @include main-title;
+//   margin: 1rem;
+//   text-align: left;
+//   // // @include mq(tablet){
+//   //   margin: 1em auto;
+//   //   text-align: center;
+//   // }
+// }
+
+h1.book-title {
+  margin-bottom: .5em;
   text-align: center;
-  font-size: 3.375em;
+
+  @include mq(tablet){
+    font-size: 3.375em;
+    line-height: 1.25;
+    margin-bottom: .75rem;
+  }
 }
 
 .book-subtitle {
@@ -28,18 +46,26 @@
   margin-top: -.5em;
 }
 
-.wf-playfairdisplay-n9-active {
-  .book-title {
-    @include usefont(Playfair);
-  }
-}
-.wf-lato-n3-active {
-  .book-subtitle {
-    @include usefont(Lato);
-    font-weight: 300;
-  }
-}
-
 .margin-block:last-child {
   margin-bottom: 0;
+}
+
+// Web Fonts
+
+// .wf-playfairdisplay-n9-active {
+//   .book-title {
+//     @include usefont(fancy);
+//     // margin: 1rem;
+//     // text-align: left;
+//     // @include mq(tablet){
+//     //   margin: 1em auto;
+//     //   text-align: center;
+//     // }
+//   }
+// }
+.wf-lato-n3-active {
+  .book-subtitle {
+    @include usefont(sans);
+    font-weight: 300;
+  }
 }

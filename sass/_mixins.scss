@@ -1,17 +1,23 @@
-@mixin mymixin {
-  .someclass { @content; }
-}
+// @mixin main-title {
+//   @include standard-margins;
+//   @include backupfont(serif);
+//   text-align: center;
+//   font-size: 2em;
+//   @include mq(tablet){
+//     font-size: 3.375em;  
+//   }
+// }
 
-@mixin usefont($font: Merriweather) {
-  @if $font == Lato {
+@mixin usefont($font: serif) {
+  @if $font == sans {
     font-family: Lato;
   }
   
-  @if $font == Merriweather {
+  @if $font == serif {
     font-family: Merriweather;
   }
 
-  @if $font == Playfair {
+  @if $font == fancy {
     font-family: Playfair Display;
   }
 
@@ -54,7 +60,7 @@
  */
 
 $palm-end:              $tablet-start - 0.01em;
-$tablet-end:               $desk-start - 0.01em;
+$tablet-end:            $desk-start - 0.01em;
 
 @mixin mq($media-query){
 
@@ -64,6 +70,10 @@ $tablet-end:               $desk-start - 0.01em;
   
   @if $media-query == desktop{
     @media only screen and (min-width:$desk-start) { @content; }
+  }
+
+  @if $media-query == widescreen{
+    @media only screen and (min-width:$widescreen-start) { @content; }
   }
 
   // Avoid these unless absolutely necessary 

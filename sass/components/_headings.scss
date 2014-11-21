@@ -9,7 +9,7 @@ h1 {
   line-height: 1.125;
 }
 .wf-playfairdisplay-n9-active {
-  h1 {
+  h1,h2 {
     @include usefont(fancy);
   } 
 }

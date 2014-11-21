@@ -5,8 +5,11 @@
     max-width: 46rem;
   }
   .hero-image {
+    max-width: 8rem;
     @include standard-margins;
-    max-width: 12rem;
+    @include mq(tablet){
+      max-width: 12rem;
+    }
   }
 }
 

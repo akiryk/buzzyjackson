@@ -10,6 +10,7 @@ When setting up this theme from scratch
   buzzy_homepage_meta_template
   buzzy_book_page_meta_template
   buzzy_post_page_meta_template
+  iframely
 3. Upload a logo in appearance > customize
 4. Create a home page. Set template to Home Main.
 5. Create a menu in Appearance > menu

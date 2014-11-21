@@ -23,6 +23,10 @@
 
 .entry-title {
   @include standard-margins;
+  font-size: 1.5em;
+  @include mq(tablet){
+    font-size:2.5rem;
+  }
 }
 
 .entry-date {
@@ -34,7 +38,7 @@
 .post-title {
   margin-bottom: .5em;
   text-align: center;
-
+  font-size: 1.5em;
   @include mq(tablet){
     font-size: 3.375em;
     line-height: 1.25;
@@ -43,9 +47,13 @@
 }
 
 .post-title-wide {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
   max-width: 64rem;
+  @include mq(tablet){
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .blog .entry-header,

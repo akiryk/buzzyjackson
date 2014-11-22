@@ -18,11 +18,7 @@
   background-color: transparent;
   border-radius: 50%;
   border: 1px solid #ccc;
-  width: 2em;
-  height: 2em;
   position: absolute;
-  right: 1em;
-  top: 1em;
   overflow: hidden;
   background-image: url(images/close-button-3px.svg);
   background-repeat: no-repeat;
@@ -33,6 +29,16 @@
   color: transparent;
   outline: none;
   z-index: 100;
+  width: 1.75em;
+  height: 1.75em;
+  top: .5em;
+  right: .5em;
+  @include mq(tablet){
+    width: 2em;
+    height: 2em;
+    right: 1em;
+    top: 1em;
+  }
   &:hover {
     border-color: #555;
   }
@@ -60,8 +66,11 @@
   display: inline-block;
   height: 100%;
   margin: 0 auto;
-  padding: 3em 3em 3em 2em;
+  padding: 2rem 1rem;
   position: relative;
+  @include mq(tablet){
+    padding: 3em 3em 3em 2em;
+  }
 }
 
 .nav-menu .sub-menu {
@@ -102,12 +111,16 @@ a.nav-thumbnail-wrapper:focus {
 }
 
 .nav-thumbnail {
+  display: none;
   margin-right: 1em;
   min-width: 4rem;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   overflow: hidden;
+  @include mq(tablet){
+    display: block;
+  }
   img {
     margin-left: -1em;
     max-width: none;
@@ -164,14 +177,4 @@ a.nav-thumbnail-wrapper:focus {
 .close .overlay .sub-menu {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
-}
-
-@media screen and (max-height: 30.5em) {
-  .overlay nav {
-    height: 70%;
-    font-size: 34px;
-  }
-  .overlay ul li {
-    min-height: 34px;
-  }
 }

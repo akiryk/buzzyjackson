@@ -6,7 +6,7 @@ buzzyjackson_s
 When setting up this theme from scratch
 
 1. Turn on theme.
-2. Install three plugins: 
+2. Install these plugins at least: 
   * buzzy_homepage_meta_template
   * buzzy_book_page_meta_template
   * buzzy_post_page_meta_template
@@ -18,5 +18,6 @@ When setting up this theme from scratch
    The menu items should be books, blog, news, bio/contact
 6. Go to settings > reading and set front page to "static" 
    Make front page "home page", the page set to Home Main template.
+7. Make book pages. Use Book Main as the teamplate.
 7. In book pages, move Featured Image up.
 8. Go to Appearance > Widgets to customize "sidebar"

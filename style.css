@@ -834,7 +834,7 @@ ul.nav-menu li:first-of-type {
   }
 }
 
-/* line 57, sass/components/_subnav.scss */
+/* line 56, sass/components/_subnav.scss */
 .sub-menu {
   list-style: none;
   background-color: #fff;
@@ -846,24 +846,25 @@ ul.nav-menu li:first-of-type {
   position: relative;
 }
 
-/* line 70, sass/components/_subnav.scss */
+/* line 69, sass/components/_subnav.scss */
 .nav-menu .sub-menu li {
   display: block;
   padding-left: 0;
   max-width: 30em;
   margin-bottom: 2rem;
 }
-/* line 76, sass/components/_subnav.scss */
+/* line 75, sass/components/_subnav.scss */
 .nav-menu .sub-menu li:first-of-type {
   padding-left: 0;
 }
-/* line 80, sass/components/_subnav.scss */
+/* line 79, sass/components/_subnav.scss */
 .nav-menu .sub-menu li:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 88, sass/components/_subnav.scss */
+/* line 87, sass/components/_subnav.scss */
 a.nav-thumbnail-wrapper {
+  display: -webkit-flex;
   display: flex;
   align-content: center;
   font-size: 1.25rem;

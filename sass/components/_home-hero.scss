@@ -21,22 +21,11 @@
   }
 }
 
-// .book-title {
-//   @include main-title;
-//   margin: 1rem;
-//   text-align: left;
-//   // // @include mq(tablet){
-//   //   margin: 1em auto;
-//   //   text-align: center;
-//   // }
-// }
-
 h1.book-title {
   margin-bottom: .5em;
   text-align: center;
 
   @include mq(tablet){
-    font-size: 3.375em;
     line-height: 1.25;
     margin-bottom: .75rem;
   }

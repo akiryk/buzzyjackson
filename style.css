@@ -302,10 +302,11 @@ p a:hover {
 
 /* line 21, sass/_base.scss */
 iframe {
-  margin: 1em auto;
+  margin: 1em auto !important;
+  width: 100% !important;
 }
 
-/* line 26, sass/_base.scss */
+/* line 27, sass/_base.scss */
 .wf-merriweather-n4-active p,
 .wf-merriweather-n4-active ul,
 .wf-merriweather-n4-active ol {
@@ -314,17 +315,17 @@ iframe {
   letter-spacing: 0;
   line-height: 1.5;
 }
-/* line 34, sass/_base.scss */
+/* line 35, sass/_base.scss */
 .wf-merriweather-n4-active .promo-beta p {
   font-size: 1em;
 }
 
-/* line 40, sass/_base.scss */
+/* line 41, sass/_base.scss */
 .wf-lato-n3-active body {
   font-family: Lato;
 }
 
-/* line 45, sass/_base.scss */
+/* line 46, sass/_base.scss */
 figure {
   margin-top: 0;
   margin-bottom: 22px;
@@ -333,45 +334,45 @@ figure {
   margin-right: auto;
 }
 
-/* line 49, sass/_base.scss */
+/* line 50, sass/_base.scss */
 img {
   max-width: 100%;
 }
 
-/* line 53, sass/_base.scss */
+/* line 54, sass/_base.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 56, sass/_base.scss */
+/* line 57, sass/_base.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 60, sass/_base.scss */
+/* line 61, sass/_base.scss */
 a {
   color: #222222;
   text-decoration: none;
   transition: all .25s;
 }
-/* line 64, sass/_base.scss */
+/* line 65, sass/_base.scss */
 a:hover {
   color: #2b8fcb;
 }
 
-/* line 70, sass/_base.scss */
+/* line 71, sass/_base.scss */
 .featured-image {
   text-align: center;
 }
 
-/* line 75, sass/_base.scss */
+/* line 76, sass/_base.scss */
 .cf:after, .secondary-heros:after, .secondary-book:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 82, sass/_base.scss */
+/* line 83, sass/_base.scss */
 .home .entry-title,
 .page-template-book-php .entry-title {
   display: none;
@@ -390,13 +391,32 @@ a:hover {
 }
 
 /* line 9, sass/_layout.scss */
+.page .entry-content {
+  margin: 1em;
+}
+@media only screen and (min-width: 42.5em) {
+  /* line 9, sass/_layout.scss */
+  .page .entry-content {
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  /* line 9, sass/_layout.scss */
+  .page .entry-content {
+    max-width: 46em;
+  }
+}
+
+/* line 21, sass/_layout.scss */
 .entry-content,
 .entry-footer {
   max-width: 46em;
   margin: 0 auto 2rem auto;
 }
 @media only screen and (min-width: 62.5em) {
-  /* line 9, sass/_layout.scss */
+  /* line 21, sass/_layout.scss */
   .entry-content,
   .entry-footer {
     padding: 0 2em;
@@ -404,7 +424,7 @@ a:hover {
 }
 
 @media only screen and (min-width: 62.5em) {
-  /* line 18, sass/_layout.scss */
+  /* line 30, sass/_layout.scss */
   .post .entry-footer {
     border-left: 1px solid #ddd;
     margin-left: 2em;
@@ -412,13 +432,13 @@ a:hover {
   }
 }
 
-/* line 26, sass/_layout.scss */
+/* line 38, sass/_layout.scss */
 .secondary-heros {
   background: #f4f4f4;
   padding: 1.5em 1em;
 }
 
-/* line 32, sass/_layout.scss */
+/* line 44, sass/_layout.scss */
 .sub-wrapper-inner {
   max-width: 42rem;
   margin: 0 auto;
@@ -431,16 +451,47 @@ a:hover {
 h1 {
   font-family: Georgia, Times, serif;
   overflow-wrap: break-word;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   line-height: 1.125;
 }
+@media only screen and (min-width: 42.5em) {
+  /* line 5, sass/components/_headings.scss */
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  /* line 5, sass/components/_headings.scss */
+  h1 {
+    font-size: 3.375em;
+  }
+}
 
-/* line 12, sass/components/_headings.scss */
+/* line 18, sass/components/_headings.scss */
+h2 {
+  font-family: Georgia, Times, serif;
+  font-size: 1.5rem;
+  line-height: 1.125;
+}
+@media only screen and (min-width: 42.5em) {
+  /* line 18, sass/components/_headings.scss */
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  /* line 18, sass/components/_headings.scss */
+  h2 {
+    font-size: 2.5em;
+  }
+}
+
+/* line 30, sass/components/_headings.scss */
 .wf-playfairdisplay-n9-active h1, .wf-playfairdisplay-n9-active h2 {
   font-family: Playfair Display;
 }
 
-/* line 63, sass/components/_headings.scss */
+/* line 81, sass/components/_headings.scss */
 h3, .book-subtitle, h1.hed-section,
 h2.hed-section,
 h3.hed-section,
@@ -454,7 +505,7 @@ h6.hed-section {
   overflow-wrap: break-word;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 63, sass/components/_headings.scss */
+  /* line 81, sass/components/_headings.scss */
   h3, .book-subtitle, h1.hed-section,
   h2.hed-section,
   h3.hed-section,
@@ -465,7 +516,7 @@ h6.hed-section {
   }
 }
 
-/* line 74, sass/components/_headings.scss */
+/* line 92, sass/components/_headings.scss */
 h4, h5, h6 {
   font-size: 1em;
   margin: 0;
@@ -523,21 +574,20 @@ h4, h5, h6 {
   }
 }
 
-/* line 34, sass/components/_home-hero.scss */
+/* line 24, sass/components/_home-hero.scss */
 h1.book-title {
   margin-bottom: .5em;
   text-align: center;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 34, sass/components/_home-hero.scss */
+  /* line 24, sass/components/_home-hero.scss */
   h1.book-title {
-    font-size: 3.375em;
     line-height: 1.25;
     margin-bottom: .75rem;
   }
 }
 
-/* line 45, sass/components/_home-hero.scss */
+/* line 34, sass/components/_home-hero.scss */
 .book-subtitle {
   margin-top: 0;
   margin-bottom: 22px;
@@ -548,12 +598,12 @@ h1.book-title {
   margin-top: -.5em;
 }
 
-/* line 52, sass/components/_home-hero.scss */
+/* line 41, sass/components/_home-hero.scss */
 .margin-block:last-child {
   margin-bottom: 0;
 }
 
-/* line 70, sass/components/_home-hero.scss */
+/* line 59, sass/components/_home-hero.scss */
 .wf-lato-n3-active .book-subtitle {
   font-family: Lato;
   font-weight: 300;
@@ -654,7 +704,6 @@ ul.nav-menu {
   font-size: 1.125em;
   list-style: none;
   overflow-x: auto;
-  white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   margin: 0;
   padding-left: 0;
@@ -666,29 +715,29 @@ ul.nav-menu {
   }
 }
 
-/* line 31, sass/components/_navigation.scss */
+/* line 28, sass/components/_navigation.scss */
 ul.nav-menu li {
   display: inline-block;
   letter-spacing: .5px;
   padding-left: 1em;
 }
-/* line 35, sass/components/_navigation.scss */
+/* line 32, sass/components/_navigation.scss */
 ul.nav-menu li:first-of-type {
   padding-left: 0;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 31, sass/components/_navigation.scss */
+  /* line 28, sass/components/_navigation.scss */
   ul.nav-menu li {
     padding-left: 2em;
     text-transform: uppercase;
   }
-  /* line 41, sass/components/_navigation.scss */
+  /* line 38, sass/components/_navigation.scss */
   ul.nav-menu li:first-of-type {
     padding-left: 2em;
   }
 }
 
-/* line 47, sass/components/_navigation.scss */
+/* line 44, sass/components/_navigation.scss */
 .nav-menu a {
   color: #333;
   font-size: 0.875rem;
@@ -696,7 +745,7 @@ ul.nav-menu li:first-of-type {
   transition: all .25s;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 47, sass/components/_navigation.scss */
+  /* line 44, sass/components/_navigation.scss */
   .nav-menu a {
     background-image: none;
     background-position: 0 1.75rem;
@@ -707,30 +756,40 @@ ul.nav-menu li:first-of-type {
     letter-spacing: .5px;
     padding: .3125rem;
   }
-  /* line 57, sass/components/_navigation.scss */
+  /* line 54, sass/components/_navigation.scss */
   .nav-menu a:hover {
     background-image: linear-gradient(to bottom, #aaaaaa 50%, white 50%);
   }
 }
 
-/* line 69, sass/components/_navigation.scss */
+/* line 64, sass/components/_navigation.scss */
 .menu-item {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 74, sass/components/_navigation.scss */
+/* line 69, sass/components/_navigation.scss */
 .wf-lato-n3-active .menu-item {
   font-family: Lato;
 }
 
 /* Overlay style */
-/* line 90, sass/components/_navigation.scss */
+/* line 2, sass/components/_subnav.scss */
 .overlay {
-  display: none;
+  background-color: rgba(0, 0, 0, 0.825);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 8011;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
 /* Overlay closing cross */
-/* line 94, sass/components/_navigation.scss */
+/* line 17, sass/components/_subnav.scss */
 .overlay .overlay-close {
   background-color: transparent;
   border-radius: 50%;
@@ -751,33 +810,33 @@ ul.nav-menu li:first-of-type {
   outline: none;
   z-index: 100;
 }
-/* line 113, sass/components/_navigation.scss */
+/* line 36, sass/components/_subnav.scss */
 .overlay .overlay-close:hover {
   border-color: #555;
 }
 
-/* Menu style */
-/* line 119, sass/components/_navigation.scss */
+/* Menu card */
+/* line 42, sass/components/_subnav.scss */
 .overlay .secondary-nav {
   text-align: center;
   position: relative;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 119, sass/components/_navigation.scss */
+  /* line 42, sass/components/_subnav.scss */
   .overlay .secondary-nav {
-    top: 25%;
+    top: 45%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 }
 @media only screen and (min-width: 62.5em) {
-  /* line 119, sass/components/_navigation.scss */
+  /* line 42, sass/components/_subnav.scss */
   .overlay .secondary-nav {
     top: 45%;
   }
 }
 
-/* line 133, sass/components/_navigation.scss */
+/* line 57, sass/components/_subnav.scss */
 .sub-menu {
   list-style: none;
   background-color: #fff;
@@ -789,51 +848,41 @@ ul.nav-menu li:first-of-type {
   position: relative;
 }
 
-/* line 144, sass/components/_navigation.scss */
-.overlay ul li {
+/* line 70, sass/components/_subnav.scss */
+.nav-menu .sub-menu li {
   display: block;
   padding-left: 0;
   max-width: 30em;
+  margin-bottom: 2rem;
 }
-
-/* line 150, sass/components/_navigation.scss */
-.overlay ul li:first-of-type {
+/* line 76, sass/components/_subnav.scss */
+.nav-menu .sub-menu li:first-of-type {
   padding-left: 0;
 }
+/* line 80, sass/components/_subnav.scss */
+.nav-menu .sub-menu li:last-of-type {
+  margin-bottom: 0;
+}
 
-/* line 154, sass/components/_navigation.scss */
-.overlay ul li a {
+/* line 88, sass/components/_subnav.scss */
+a.nav-thumbnail-wrapper {
+  display: flex;
+  align-content: center;
   font-size: 1.25rem;
   font-weight: 300;
-  display: block;
   color: #111;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
 }
 
-/* line 164, sass/components/_navigation.scss */
-.overlay ul li a:hover,
-.overlay ul li a:focus {
+/* line 98, sass/components/_subnav.scss */
+a.nav-thumbnail-wrapper:hover,
+a.nav-thumbnail-wrapper:focus {
   background-image: none;
   color: #2b8fcb;
 }
 
-/* line 170, sass/components/_navigation.scss */
-.sub-menu .menu-item {
-  margin-bottom: 2rem;
-}
-/* line 172, sass/components/_navigation.scss */
-.sub-menu .menu-item:last-of-type {
-  margin-bottom: 0;
-}
-
-/* line 177, sass/components/_navigation.scss */
-.overlay .nav-thumbnail-wrapper {
-  display: flex;
-  align-content: center;
-}
-
-/* line 182, sass/components/_navigation.scss */
+/* line 104, sass/components/_subnav.scss */
 .nav-thumbnail {
   margin-right: 1em;
   min-width: 4rem;
@@ -842,24 +891,24 @@ ul.nav-menu li:first-of-type {
   border-radius: 50%;
   overflow: hidden;
 }
-/* line 189, sass/components/_navigation.scss */
+/* line 111, sass/components/_subnav.scss */
 .nav-thumbnail img {
   margin-left: -1em;
   max-width: none;
   transition: margin .25s ease-out;
 }
 
-/* line 196, sass/components/_navigation.scss */
+/* line 118, sass/components/_subnav.scss */
 .sub-menu a:hover img {
   margin-left: -2.5em;
 }
 
-/* line 200, sass/components/_navigation.scss */
+/* line 122, sass/components/_subnav.scss */
 .thumb-text {
   text-align: left;
 }
 
-/* line 207, sass/components/_navigation.scss */
+/* line 129, sass/components/_subnav.scss */
 .thumb-subtitle {
   clear: left;
   color: #999;
@@ -868,28 +917,22 @@ ul.nav-menu li:first-of-type {
 }
 
 /* Effects */
-/* line 222, sass/components/_navigation.scss */
-.overlay-hugeinc {
-  display: none;
+/* line 137, sass/components/_subnav.scss */
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
-/* line 233, sass/components/_navigation.scss */
-.overlay-hugeinc.open {
-  display: block;
-  position: fixed;
-  top: 100px;
-  left: 0;
-  z-index: 8888;
-}
-
-/* line 241, sass/components/_navigation.scss */
+/* line 144, sass/components/_subnav.scss */
 .secondary-nav {
   -webkit-perspective: 1200px;
   perspective: 1200px;
   white-space: normal;
 }
 
-/* line 247, sass/components/_navigation.scss */
+/* line 150, sass/components/_subnav.scss */
 .sub-menu {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
@@ -898,19 +941,31 @@ ul.nav-menu li:first-of-type {
   transition: transform 0.5s, opacity 0.5s;
 }
 
-/* line 255, sass/components/_navigation.scss */
-.overlay-hugeinc.open .sub-menu {
+/* line 158, sass/components/_subnav.scss */
+.overlay.open .sub-menu {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-/* line 261, sass/components/_navigation.scss */
-.overlay-hugeinc.close .sub-menu {
+/* line 164, sass/components/_subnav.scss */
+.overlay.close .sub-menu {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
 }
 
+@media screen and (max-height: 30.5em) {
+  /* line 170, sass/components/_subnav.scss */
+  .overlay nav {
+    height: 70%;
+    font-size: 34px;
+  }
+
+  /* line 174, sass/components/_subnav.scss */
+  .overlay ul li {
+    min-height: 34px;
+  }
+}
 /* line 1, sass/components/_social.scss */
 .connections-wrapper {
   position: relative;
@@ -1203,33 +1258,46 @@ iframe.twitter-tweet {
 /* line 32, sass/components/_posts.scss */
 .entry-date {
   color: #b71909;
-  font-size: .75em;
+  font-size: .5em;
   text-transform: uppercase;
 }
-
-/* line 38, sass/components/_posts.scss */
-.post-title {
-  margin-bottom: .5em;
-  text-align: center;
-  font-size: 1.5em;
-}
 @media only screen and (min-width: 42.5em) {
-  /* line 38, sass/components/_posts.scss */
-  .post-title {
-    font-size: 3.375em;
-    line-height: 1.25;
-    margin-bottom: .75rem;
+  /* line 32, sass/components/_posts.scss */
+  .entry-date {
+    font-size: .75em;
   }
 }
 
-/* line 49, sass/components/_posts.scss */
+/* line 41, sass/components/_posts.scss */
+.post-title {
+  margin-bottom: .5em;
+  text-align: center;
+}
+@media only screen and (min-width: 42.5em) {
+  /* line 41, sass/components/_posts.scss */
+  .post-title {
+    line-height: 1.25;
+    margin-bottom: .75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  /* line 41, sass/components/_posts.scss */
+  .post-title {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* line 56, sass/components/_posts.scss */
 .post-title-wide {
   margin-left: 1rem;
   margin-right: 1rem;
   max-width: 64rem;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 49, sass/components/_posts.scss */
+  /* line 56, sass/components/_posts.scss */
   .post-title-wide {
     margin-left: auto;
     margin-right: auto;
@@ -1237,25 +1305,25 @@ iframe.twitter-tweet {
 }
 
 @media only screen and (min-width: 62.5em) {
-  /* line 59, sass/components/_posts.scss */
+  /* line 66, sass/components/_posts.scss */
   .blog .entry-header,
   .archive .entry-header {
     padding: 0 2em;
   }
 }
 
-/* line 67, sass/components/_posts.scss */
+/* line 74, sass/components/_posts.scss */
 .archive .page-title {
   color: #b71909;
   text-transform: capitalize;
 }
 
-/* line 73, sass/components/_posts.scss */
+/* line 80, sass/components/_posts.scss */
 .timestamp {
   margin-bottom: 0;
 }
 
-/* line 78, sass/components/_posts.scss */
+/* line 85, sass/components/_posts.scss */
 .timestamp span:before,
 .timestamp span:after {
   content: "";
@@ -1266,7 +1334,7 @@ iframe.twitter-tweet {
   top: 0.125rem;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 78, sass/components/_posts.scss */
+  /* line 85, sass/components/_posts.scss */
   .timestamp span:before,
   .timestamp span:after {
     border-bottom: 1px solid #ccc;
@@ -1274,7 +1342,7 @@ iframe.twitter-tweet {
   }
 }
 
-/* line 93, sass/components/_posts.scss */
+/* line 100, sass/components/_posts.scss */
 h1.hed-section,
 h2.hed-section,
 .hed-section.book-subtitle,
@@ -1295,7 +1363,7 @@ h6.hed-section {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 104, sass/components/_posts.scss */
+/* line 111, sass/components/_posts.scss */
 .cat-links,
 .tags-links {
   color: #999;
@@ -1303,30 +1371,30 @@ h6.hed-section {
   font-style: italic;
   margin-bottom: 1rem;
 }
-/* line 110, sass/components/_posts.scss */
+/* line 117, sass/components/_posts.scss */
 .cat-links a,
 .tags-links a {
   color: #2b8fcb;
 }
-/* line 112, sass/components/_posts.scss */
+/* line 119, sass/components/_posts.scss */
 .cat-links a:hover,
 .tags-links a:hover {
   color: #195477;
 }
 
-/* line 118, sass/components/_posts.scss */
+/* line 125, sass/components/_posts.scss */
 .book-review-intro {
   color: #777;
 }
 
-/* line 123, sass/components/_posts.scss */
+/* line 130, sass/components/_posts.scss */
 .wf-lato-n4-active .book-review-intro {
   font-family: Lato;
   font-size: 1em;
   color: #777;
 }
 
-/* line 131, sass/components/_posts.scss */
+/* line 138, sass/components/_posts.scss */
 .wf-merriweather-i4-active .cat-links,
 .wf-merriweather-i4-active .tags-links {
   font-family: Merriweather;
@@ -1814,7 +1882,7 @@ img.aligncenter {
   }
 }
 
-/* line 31, sass/style.scss */
+/* line 32, sass/style.scss */
 .assistive-text {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);

@@ -16,15 +16,12 @@ ul.nav-menu {
   font-size: 1.125em;
   list-style: none;
   overflow-x: auto;
-  white-space: nowrap;
+  // white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   margin: 0;
   padding-left: 0;
   @include mq(tablet){
     margin-left: -2em;  
-  }
-  ul {
-    // display: none;
   }
 }
 
@@ -56,8 +53,6 @@ ul.nav-menu li {
     background-size: 2px 2px;
     &:hover {
       background-image: linear-gradient(to bottom, #aaa 50%, #fff 50%); 
-      // background-color: #333;
-      // color: #fff;
     }
     font-size: 1.125em;
     line-height: 1.5;
@@ -73,201 +68,5 @@ ul.nav-menu li {
 .wf-lato-n3-active {
   .menu-item {
     @include usefont(sans);
-  }
-}
-
-/* Overlay style */
-// .overlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0,0,0,0.825);
-//   z-index: 8011;
-// }
-
-.overlay {
-  display: none;
-}
-/* Overlay closing cross */
-.overlay .overlay-close {
-  background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  width: 2em;
-  height: 2em;
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  overflow: hidden;
-  background-image: url(images/close-button-3px.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50%;
-  text-indent: 200%;
-  transition: border-color .25s;
-  color: transparent;
-  outline: none;
-  z-index: 100;
-  &:hover {
-    border-color: #555;
-  }
-}
-
-/* Menu style */
-.overlay .secondary-nav {
-  text-align: center;
-  position: relative;
-  @include mq(tablet){
-    top: 25%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);  
-  }
-  @include mq(desktop){
-    top: 45%;
-  }
-  
-}
-
-.sub-menu {
-  list-style: none;
-  background-color: #fff;
-  box-shadow: 0 0 2.125em rgba(0,0,0,0.1);
-  display: inline-block;
-  height: 100%;
-  margin: 0 auto;
-  padding: 3em 3em 3em 2em;
-  position: relative;
-}
-
-.overlay ul li {
-  display: block;
-  padding-left: 0;
-  max-width: 30em;
-}
-
-.overlay ul li:first-of-type {
-  padding-left: 0;
-}
-
-.overlay ul li a {
-  font-size: 1.25rem;
-  font-weight: 300;
-  display: block;
-  color: #111;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s;
-  // text-transform: capitalize;
-}
-
-.overlay ul li a:hover,
-.overlay ul li a:focus {
-  background-image: none;
-  color: $brand-blue;
-}
-
-.sub-menu .menu-item {
-  margin-bottom: 2rem;
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-.overlay .nav-thumbnail-wrapper {
-  display: flex;
-  align-content: center;
-}
-
-.nav-thumbnail {
-  margin-right: 1em;
-  min-width: 4rem;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  overflow: hidden;
-  img {
-    margin-left: -1em;
-    max-width: none;
-    transition: margin .25s ease-out;
-  }
-}
-
-.sub-menu a:hover img {
-  margin-left: -2.5em;
-}
-
-.thumb-text {
-  text-align: left;
-}
-
-.thumb-title {
-}
-
-.thumb-subtitle {
-  clear: left;
-  color: #999;
-  text-transform: capitalize;
-  font-size: .825em;
-}
-
-/* Effects */
-// .overlay-hugeinc {
-//   opacity: 0;
-//   visibility: hidden;
-//   -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-//   transition: opacity 0.5s, visibility 0s 0.5s;
-// }
-
-.overlay-hugeinc {
-  display: none;
-}
-
-// .overlay-hugeinc.open {
-//   opacity: 1;
-//   visibility: visible;
-//   -webkit-transition: opacity 0.5s;
-//   transition: opacity 0.5s;
-// }
-
-.overlay-hugeinc.open {
-  display: block;
-  position: fixed;
-  top: 100px;
-  left: 0;
-  z-index: 8888;
-}
-
-.secondary-nav {
-  -webkit-perspective: 1200px;
-  perspective: 1200px;
-  white-space: normal;
-}
-
-.sub-menu {
-  opacity: 0.4;
-  -webkit-transform: translateY(-25%) rotateX(35deg);
-  transform: translateY(-25%) rotateX(35deg);
-  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-  transition: transform 0.5s, opacity 0.5s;
-}
-
-.overlay-hugeinc.open .sub-menu {
-  opacity: 1;
-  -webkit-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-
-.overlay-hugeinc.close .sub-menu {
-  -webkit-transform: translateY(25%) rotateX(-35deg);
-  transform: translateY(25%) rotateX(-35deg);
-}
-
-@media screen and (max-height: 30.5em) {
-  .overlay nav {
-    // height: 70%;
-  }
-  .overlay ul li {
-    // min-height: 34px;
   }
 }

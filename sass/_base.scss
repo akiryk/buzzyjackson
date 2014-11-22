@@ -19,7 +19,8 @@ p {
 }
 
 iframe {
-  margin: 1em auto;
+  margin: 1em auto !important;
+  width: 100% !important;
 }
 
 .wf-merriweather-n4-active {

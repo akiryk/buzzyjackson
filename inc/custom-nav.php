@@ -46,7 +46,7 @@ class AK_Nav_Walker extends Walker {
    */
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<div class=\"overlay overlay-hugeinc\">";
+    $output .= "\n$indent<div class=\"overlay\">";
     $output .= "\n$indent<nav class=\"secondary-nav\">";
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
     $output .= "\n$indent<button type=\"button\" class=\"overlay-close\">Close</button>";

@@ -13,7 +13,8 @@
 @import "components/helpers";
 @import "components/home-hero";
 @import "components/masthead";
-@import "components/navigation";
+@import "components/navigation"; // regular menu
+@import "components/subnav"; // dropdown /overlay menu
 @import "components/social";
 @import "components/callouts";
 @import "components/blockquotes";

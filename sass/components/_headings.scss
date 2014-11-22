@@ -5,8 +5,26 @@
 h1 {
   @include backupfont(serif);
   overflow-wrap: break-word;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   line-height: 1.125;
+  @include mq(tablet){
+    font-size: 2.5rem;
+  }
+  @include mq(desktop){
+    font-size: 3.375em;
+  }
+}
+
+h2 {
+  @include backupfont(serif);
+  font-size: 1.5rem;
+  line-height: 1.125;
+  @include mq(tablet){
+    font-size: 1.5rem;
+  }
+  @include mq(desktop){
+    font-size: 2.5em;
+  }
 }
 .wf-playfairdisplay-n9-active {
   h1,h2 {

@@ -703,8 +703,6 @@ h1.site-title a {
 ul.nav-menu {
   font-size: 1.125em;
   list-style: none;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   margin: 0;
   padding-left: 0;
 }

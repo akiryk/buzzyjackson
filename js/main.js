@@ -12,7 +12,6 @@ jQuery(document).ready(function($) {
     e.stopPropagation();
 
     $(document).on('click', function(e) {
-      e.preventDefault();
       $(this).off();
       attachHandler();
       $overlay.removeClass('open');

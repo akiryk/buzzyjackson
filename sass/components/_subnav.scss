@@ -11,6 +11,8 @@
   visibility: hidden;
   -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
   transition: opacity 0.5s, visibility 0s 0.5s;
+  overflow-x: visible;
+  white-space: normal;
 }
 
 /* Overlay closing cross */

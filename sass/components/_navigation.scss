@@ -15,9 +15,9 @@
 ul.nav-menu {
   font-size: 1.125em;
   list-style: none;
-  // overflow-x: auto;
-  // white-space: nowrap;
-  // -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
   margin: 0;
   padding-left: 0;
   @include mq(tablet){

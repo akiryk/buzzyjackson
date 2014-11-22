@@ -11,8 +11,6 @@
   visibility: hidden;
   -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
   transition: opacity 0.5s, visibility 0s 0.5s;
-  overflow-x: visible;
-  white-space: normal;
 }
 
 /* Overlay closing cross */
@@ -136,7 +134,7 @@ a.nav-thumbnail-wrapper:focus {
 }
 
 /* Effects */
-.overlay.open {
+.open .overlay {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.5s;
@@ -157,13 +155,13 @@ a.nav-thumbnail-wrapper:focus {
   transition: transform 0.5s, opacity 0.5s;
 }
 
-.overlay.open .sub-menu {
+.open .overlay .sub-menu {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-.overlay.close .sub-menu {
+.close .overlay .sub-menu {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
 }

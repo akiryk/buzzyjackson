@@ -703,9 +703,6 @@ h1.site-title a {
 ul.nav-menu {
   font-size: 1.125em;
   list-style: none;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
   margin: 0;
   padding-left: 0;
 }
@@ -787,12 +784,10 @@ ul.nav-menu li:first-of-type {
   visibility: hidden;
   -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
   transition: opacity 0.5s, visibility 0s 0.5s;
-  overflow-x: visible;
-  white-space: normal;
 }
 
 /* Overlay closing cross */
-/* line 19, sass/components/_subnav.scss */
+/* line 17, sass/components/_subnav.scss */
 .overlay .overlay-close {
   background-color: transparent;
   border-radius: 50%;
@@ -813,19 +808,19 @@ ul.nav-menu li:first-of-type {
   outline: none;
   z-index: 100;
 }
-/* line 38, sass/components/_subnav.scss */
+/* line 36, sass/components/_subnav.scss */
 .overlay .overlay-close:hover {
   border-color: #555;
 }
 
 /* Menu card */
-/* line 44, sass/components/_subnav.scss */
+/* line 42, sass/components/_subnav.scss */
 .overlay .secondary-nav {
   text-align: center;
   position: relative;
 }
 @media only screen and (min-width: 42.5em) {
-  /* line 44, sass/components/_subnav.scss */
+  /* line 42, sass/components/_subnav.scss */
   .overlay .secondary-nav {
     top: 45%;
     -webkit-transform: translateY(-50%);
@@ -833,13 +828,13 @@ ul.nav-menu li:first-of-type {
   }
 }
 @media only screen and (min-width: 62.5em) {
-  /* line 44, sass/components/_subnav.scss */
+  /* line 42, sass/components/_subnav.scss */
   .overlay .secondary-nav {
     top: 45%;
   }
 }
 
-/* line 58, sass/components/_subnav.scss */
+/* line 56, sass/components/_subnav.scss */
 .sub-menu {
   list-style: none;
   background-color: #fff;
@@ -851,23 +846,23 @@ ul.nav-menu li:first-of-type {
   position: relative;
 }
 
-/* line 71, sass/components/_subnav.scss */
+/* line 69, sass/components/_subnav.scss */
 .nav-menu .sub-menu li {
   display: block;
   padding-left: 0;
   max-width: 30em;
   margin-bottom: 2rem;
 }
-/* line 77, sass/components/_subnav.scss */
+/* line 75, sass/components/_subnav.scss */
 .nav-menu .sub-menu li:first-of-type {
   padding-left: 0;
 }
-/* line 81, sass/components/_subnav.scss */
+/* line 79, sass/components/_subnav.scss */
 .nav-menu .sub-menu li:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 89, sass/components/_subnav.scss */
+/* line 87, sass/components/_subnav.scss */
 a.nav-thumbnail-wrapper {
   display: -webkit-flex;
   display: flex;
@@ -879,14 +874,14 @@ a.nav-thumbnail-wrapper {
   transition: color 0.2s;
 }
 
-/* line 100, sass/components/_subnav.scss */
+/* line 98, sass/components/_subnav.scss */
 a.nav-thumbnail-wrapper:hover,
 a.nav-thumbnail-wrapper:focus {
   background-image: none;
   color: #2b8fcb;
 }
 
-/* line 106, sass/components/_subnav.scss */
+/* line 104, sass/components/_subnav.scss */
 .nav-thumbnail {
   margin-right: 1em;
   min-width: 4rem;
@@ -895,24 +890,24 @@ a.nav-thumbnail-wrapper:focus {
   border-radius: 50%;
   overflow: hidden;
 }
-/* line 113, sass/components/_subnav.scss */
+/* line 111, sass/components/_subnav.scss */
 .nav-thumbnail img {
   margin-left: -1em;
   max-width: none;
   transition: margin .25s ease-out;
 }
 
-/* line 120, sass/components/_subnav.scss */
+/* line 118, sass/components/_subnav.scss */
 .sub-menu a:hover img {
   margin-left: -2.5em;
 }
 
-/* line 124, sass/components/_subnav.scss */
+/* line 122, sass/components/_subnav.scss */
 .thumb-text {
   text-align: left;
 }
 
-/* line 131, sass/components/_subnav.scss */
+/* line 129, sass/components/_subnav.scss */
 .thumb-subtitle {
   clear: left;
   color: #999;
@@ -921,22 +916,22 @@ a.nav-thumbnail-wrapper:focus {
 }
 
 /* Effects */
-/* line 139, sass/components/_subnav.scss */
-.overlay.open {
+/* line 137, sass/components/_subnav.scss */
+.open .overlay {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
 
-/* line 146, sass/components/_subnav.scss */
+/* line 144, sass/components/_subnav.scss */
 .secondary-nav {
   -webkit-perspective: 1200px;
   perspective: 1200px;
   white-space: normal;
 }
 
-/* line 152, sass/components/_subnav.scss */
+/* line 150, sass/components/_subnav.scss */
 .sub-menu {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
@@ -945,27 +940,27 @@ a.nav-thumbnail-wrapper:focus {
   transition: transform 0.5s, opacity 0.5s;
 }
 
-/* line 160, sass/components/_subnav.scss */
-.overlay.open .sub-menu {
+/* line 158, sass/components/_subnav.scss */
+.open .overlay .sub-menu {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-/* line 166, sass/components/_subnav.scss */
-.overlay.close .sub-menu {
+/* line 164, sass/components/_subnav.scss */
+.close .overlay .sub-menu {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
 }
 
 @media screen and (max-height: 30.5em) {
-  /* line 172, sass/components/_subnav.scss */
+  /* line 170, sass/components/_subnav.scss */
   .overlay nav {
     height: 70%;
     font-size: 34px;
   }
 
-  /* line 176, sass/components/_subnav.scss */
+  /* line 174, sass/components/_subnav.scss */
   .overlay ul li {
     min-height: 34px;
   }

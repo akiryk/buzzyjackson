@@ -5,7 +5,8 @@ jQuery(document).ready(function($) {
   */
   var handler = function(e){
     $(this).off();
-    $overlay = $(this).find('.overlay');
+    $overlay = $(this);
+    // $overlay = $(this).find('.overlay');
     $overlay.addClass('open');
     e.preventDefault();
     e.stopPropagation();

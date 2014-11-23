@@ -20,30 +20,24 @@ ul.nav-menu {
   // -webkit-overflow-scrolling: touch;
   margin: 0;
   padding-left: 0;
-  @include mq(tablet){
-    margin-left: -2em;  
-  }
 }
 
 ul.nav-menu li {
   display: inline-block;
   letter-spacing: .5px;
-  padding-left: 1em;
-  &:first-of-type {
-    padding-left: 0; 
-  }
   @include mq(tablet){
-    padding-left: 2em;
+    // padding-left: 2em;
     text-transform: uppercase;
-    &:first-of-type {
-      padding-left: 2em;
-    }
+    // &:first-of-type {
+    //   padding-left: 2em;
+    // }
   }
 }
 
-.nav-menu a {
+a.menu-item-top-level {
   color: #333;
-  font-size: 0.875rem;
+  font-size: 15/16 * 1rem;
+  padding: .3125rem 1rem;
   text-decoration: none;
   transition: all .25s;
   @include mq(tablet){
@@ -51,13 +45,15 @@ ul.nav-menu li {
     background-position: 0 1.75rem;
     background-repeat: repeat-x;
     background-size: 2px 2px;
+    border-radius: 2px;
     &:hover {
-      background-image: linear-gradient(to bottom, #aaa 50%, #fff 50%); 
+      background-image: none;
+      background-color: #eee;
     }
     font-size: 1.125em;
     line-height: 1.5;
     letter-spacing: .5px;
-    padding: .3125rem;
+    padding: .3125rem 1rem;
   }
 }
 

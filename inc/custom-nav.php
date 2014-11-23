@@ -124,6 +124,7 @@ class AK_Nav_Walker extends Walker {
     $atts['target'] = ! empty( $item->target )     ? $item->target     : '';
     $atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
     $atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+    $atts['class'] = $depth == 0 ? 'menu-item-top-level' : '';
 
     /**
      * Filter the HTML attributes applied to a menu item's <a>.

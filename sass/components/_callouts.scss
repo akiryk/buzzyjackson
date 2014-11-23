@@ -2,16 +2,13 @@
   display: inline-block;
   font-weight: 500;
   letter-spacing: 1px;
+  line-height: 1.125;
   margin-bottom: $bottom-spacing;
   padding: 0.5em 1em;
+  text-align: center;
   text-transform: uppercase;
 }
 
-
-.callout {
-  line-height: 0.5;
-  text-align: center;
-}
 .callout span {
   display: inline-block;
   position: relative;  
@@ -23,7 +20,7 @@
   height: 5px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  top: 0.125rem;
+  top: 0.425rem;
   width: 4rem;
 }
 .callout span:before {
@@ -42,6 +39,7 @@
 
   span:before,
   span:after {
+    top: 0.625rem;
   }
 }
 

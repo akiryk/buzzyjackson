@@ -114,9 +114,6 @@ $postID = get_the_ID();
         </div><!-- promo-beta -->
       <?php } ?>
 
-        <footer class="entry-footer">
-          <?php edit_post_link( __( 'Edit', 'buzzyjackson_s' ), '<span class="edit-link">', '</span>' ); ?>
-        </footer><!-- .entry-footer -->
       </div>
       </section>
     </div><!-- .sub-wrapper-inner -->

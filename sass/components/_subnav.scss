@@ -137,13 +137,20 @@ a.nav-thumbnail-wrapper:focus {
 }
 
 .thumb-title {
+  font-weight: 700;
+  @include mq(tablet){
+    font-weight: 300;
+  }
 }
 
 .thumb-subtitle {
   clear: left;
-  color: #999;
+  color: #666;
   text-transform: capitalize;
   font-size: .825em;
+  @include mq(tablet){
+    color: #999;
+  }
 }
 
 /* Effects */

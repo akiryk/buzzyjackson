@@ -20,9 +20,13 @@ img.aligncenter {
 }
 
 .full-width-image {
-  height: 500/16 * 1em;
+  height: 25vh;
   background-size: cover;
   margin-bottom: 1em;
+  @include mq(tablet){
+    height: 500/16 * 1em;
+    height: 60vh;
+  }
 }
 
 .wp-caption-text {

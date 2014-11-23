@@ -49,8 +49,28 @@
   } 
 }
 
+
+@include mq(tablet){
+  .page .pull-quote:first-letter {
+    @include backupfont(sans);
+    color: $brand-red;
+    font-size: 70/16 * 1rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 70/16 * 1rem;
+    float: left;
+    padding-right: 0.125em;
+  }
+}
+
 .wf-playfairdisplay-n9-active {
   .page .pull-quote:first-letter {
+    @include mq(tablet){
+      @include usefont(fancy);
+      font-size: 72/16 * 1rem;
+      line-height: 62/16 * 1rem;
+      padding-right: 12/16 * 1rem;
+    }
     @include mq(desktop){
       @include usefont(fancy);
       color: $brand-red;

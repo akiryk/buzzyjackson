@@ -1,5 +1,4 @@
 .home-hero {
-  margin: 1em;
   @include mq(desktop){
     margin: 0 auto;
     max-width: 46rem;
@@ -14,10 +13,10 @@
 }
 
 .home-hero-intro {
-  margin-bottom: 2em;
-  padding: 0 3%;
-  @include mq(desktop){
-    padding: 0;
+  margin: 0 1em 2em 1em;
+  max-width: 40em;
+  @include mq(tablet){
+    margin: 0 auto 2em auto;
   }
 }
 
@@ -26,7 +25,6 @@ h1.book-title {
   text-align: center;
 
   @include mq(tablet){
-    line-height: 1.25;
     margin-bottom: .75rem;
   }
 }
@@ -35,7 +33,9 @@ h1.book-title {
   @extend h3;
   @include standard-margins;
   @include backupfont(sans);
-  margin-top: -.5em;
+  font-weight: normal;
+  line-height: 1.35;
+  // margin-top: -.5em;
 }
 
 .margin-block:last-child {
@@ -44,17 +44,7 @@ h1.book-title {
 
 // Web Fonts
 
-// .wf-playfairdisplay-n9-active {
-//   .book-title {
-//     @include usefont(fancy);
-//     // margin: 1rem;
-//     // text-align: left;
-//     // @include mq(tablet){
-//     //   margin: 1em auto;
-//     //   text-align: center;
-//     // }
-//   }
-// }
+
 .wf-lato-n3-active {
   .book-subtitle {
     @include usefont(sans);

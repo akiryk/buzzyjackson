@@ -13,13 +13,27 @@
 get_header(); 
 ?>
 
-    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <?php $image_treatment = get_post_meta( $post->ID, 'mb-image-style', true ); ?>
 
     <?php if ($image_treatment == 'feature-super' && has_post_thumbnail()) { ?>
-      <?php // use featured as a background image in css ?>
+      <?php 
+        // get two versions of the featured image
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); 
+        $thumb_url = $thumb['0'];
+        $full_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+      ?>
       <?php $placement = get_post_meta( $post->ID, 'mb-image-placement', true ); ?>
-      <div class="full-width-image" style="background-image:url(<?php echo $url; ?>); background-position-y:<?php echo $placement; ?>"></div>
+      <?php // Use the featured image as background image ?>
+      <style type="text/css">
+        .full-width-image { 
+          background-image: url(<?=$thumb_url?>); 
+          background-position-y:<?=$placement?>;
+        }
+        @media (min-width: 42.5em) {
+          .full-width-image { background-image: url(<?=$full_url?>); }
+        }
+      </style>
+      <div class="full-width-image"></div>
        <?php the_title( sprintf( '<h1 class="post-title post-title-wide margin-block">', esc_url( get_permalink() ) ), '</h1>' ); ?>
        <section class="home-hero">
         <div class="centered-module">

@@ -1,0 +1,12 @@
+.widget-area {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  @include mq(tablet){
+    flex-direction: row;
+  }
+}
+
+.widget {
+  flex: 1;
+}

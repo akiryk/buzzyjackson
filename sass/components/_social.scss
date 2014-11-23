@@ -15,18 +15,20 @@
   border-top: none;
   float: right;
   width: 33.33333%;
-  padding-left: 2rem;
+  padding-left: 1rem;
   padding-bottom: .25em;
   position: relative;
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom: 2rem;
   top: 0; 
   text-align: left;
-  width: 8em;
+  width: 6em;
 
-  // @include mq(tablet){
-  //   top: 1.25em;
-  // }
+  @include mq(tablet){
+    padding-left: 2rem;
+    margin-left: 2rem;
+    width: 8em;
+  }
   @include mq(desktop){
     border: none;
     float: none;
@@ -69,9 +71,9 @@
   font-size: .75em;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: .25rem;
-  @include mq(tablet){
-    margin-bottom: 0;
+  margin-bottom: .5rem;
+  @include mq(desktop){
+    margin-bottom: 0.25rem;
   }
 }
 
@@ -80,17 +82,14 @@
   color: #666;
   display: block;
   font-size: .75em;
-  padding: 0.75em 0;
+  padding: 1em 0;
   text-decoration: none;
-  // @include mq(smartphone){
-  //   background: none;
-  // }
   &:hover {
     background: none;
   }
-  @include mq(tablet){
-    display: inline;
-    background-position: 0 22px;
+
+  @include mq(desktop){
+    padding: .5em 0;
   }
 }
 

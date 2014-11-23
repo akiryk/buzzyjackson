@@ -11,15 +11,10 @@ jQuery(document).ready(function($) {
     e.preventDefault();
     e.stopPropagation();
 
-    var flag = false;
-    $(document).on('click touchstart', function(e) {
-      if (!flag) {
-        flag = true;
-        setTimeout(function(){ flag = false; }, 100);
-        $(this).off();
-        attachHandler();
-        $overlay.removeClass('open');
-      }
+    $(document).on('click', function(e) {
+      $(this).off();
+      attachHandler();
+      $overlay.removeClass('open');
     });
   };
 

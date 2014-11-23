@@ -20,7 +20,7 @@
 
 .wf-playfairdisplay-n9-active {
   .single-post .entry-content p:first-of-type:not(.no-initial-cap):first-letter {
-    @include mq(widescreen){
+    @include mq(desktop){
       @include usefont(fancy);
       font-size: 132/16 * 1rem;
       line-height: 92/16 * 1rem;

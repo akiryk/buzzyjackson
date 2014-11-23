@@ -35,12 +35,12 @@ get_header();
       </style>
       <div class="full-width-image"></div>
        <?php the_title( sprintf( '<h1 class="post-title post-title-wide margin-block">', esc_url( get_permalink() ) ), '</h1>' ); ?>
-       <section class="home-hero">
+       <section class="post-hero">
         <div class="centered-module">
     <?php } else { ?>
       <?php // use featured image as a normal image ?>
-    <section class="home-hero">
-      <div class="home-hero-intro centered-module">
+    <section class="post-hero">
+      <div class="post-hero-intro centered-module">
         <?php if ( has_post_thumbnail() ) : ?>
           <figure class="margin-block featured-image">
             <?php the_post_thumbnail('large'); ?>
@@ -59,7 +59,7 @@ get_header();
         </div>
       </div>
 
-      <div class="home-hero-body content">
+      <div class="post-body content">
     
         <?php while ( have_posts() ) : the_post(); ?>
           <?php  get_template_part( 'content', 'single' ); ?>

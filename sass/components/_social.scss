@@ -25,12 +25,12 @@
   width: 6em;
 
   @include mq(tablet){
+    border: none;
     padding-left: 2rem;
     margin-left: 2rem;
     width: 8em;
   }
   @include mq(desktop){
-    border: none;
     float: none;
     position: absolute;
     top: 2em;
@@ -69,7 +69,7 @@
   color: $brand-red;
   line-height: 2.25;
   font-size: .75em;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: .5rem;
   @include mq(desktop){

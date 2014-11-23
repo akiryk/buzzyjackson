@@ -49,7 +49,8 @@ class AK_Nav_Walker extends Walker {
     $output .= "\n$indent<div class=\"overlay\">";
     $output .= "\n$indent<nav class=\"secondary-nav\">";
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
-    $output .= "\n$indent<button type=\"button\" class=\"overlay-close\">Close</button>";
+    //$output .= "\n$indent<button type=\"button\" class=\"overlay-close\">Close</button>";
+    $output .= "\n$indent<div role=\"button\" class=\"overlay-close\">Close</div>";
   }
 
   /**

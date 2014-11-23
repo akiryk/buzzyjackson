@@ -37,7 +37,7 @@ ul.nav-menu li {
 a.menu-item-top-level {
   color: #333;
   font-size: 15/16 * 1rem;
-  padding: .3125rem 1rem;
+  padding: .3125rem .75rem;
   text-decoration: none;
   transition: all .25s;
   @include mq(tablet){

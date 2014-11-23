@@ -19,7 +19,6 @@
   border-radius: 50%;
   border: 1px solid #ccc;
   position: absolute;
-  overflow: hidden;
   background-image: url(images/close-button-3px.svg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -29,15 +28,15 @@
   color: transparent;
   outline: none;
   z-index: 100;
-  width: 1.75em;
-  height: 1.75em;
-  top: .5em;
-  right: .5em;
+  width: 1.75rem;
+  height: 1.75rem;
+  top: .5rem;
+  right: .5rem;
   @include mq(tablet){
-    width: 2em;
-    height: 2em;
-    right: 1em;
-    top: 1em;
+    width: 2rem;
+    height: 2rem;
+    right: 1rem;
+    top: 1rem;
   }
   &:hover {
     border-color: #555;

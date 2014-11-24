@@ -18,9 +18,11 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+		<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'buzzyjackson_s' ), '<div class="edit-button-container">', '</div>' ); ?>
 	</footer><!-- .entry-footer -->
+	
+	</div><!-- .entry-content -->
+
 </article><!-- #post-## -->

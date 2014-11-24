@@ -27,6 +27,10 @@
   }
 }
 
+.entry-footer {
+  padding: 0;
+}
+
 .post .entry-footer {
   @include mq(desktop){
     border-left: 1px solid #ddd;
@@ -34,6 +38,7 @@
     padding: .5em 1em .001em 2em;
   }
 }
+
 
 .sub-wrapper-inner {
   max-width: 42rem;

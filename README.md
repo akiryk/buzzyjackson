@@ -21,3 +21,6 @@ When setting up this theme from scratch
 7. Make book pages. Use Book Main as the teamplate.
 7. In book pages, move Featured Image up.
 8. Go to Appearance > Widgets to customize "sidebar"
+
+When creating posts:
+1. If it's a book review, use book review intro format

@@ -71,7 +71,7 @@ $postID = get_the_ID();
         <div class="home-hero-body">
 
           <?php while ( have_posts() ) : the_post(); ?>
-            <?php  get_template_part( 'content', 'page' ); ?>
+            <?php get_template_part( 'content', 'page' ); ?>
           <?php endwhile; // end of the loop. ?>
 
         </div><!-- .main-body -->

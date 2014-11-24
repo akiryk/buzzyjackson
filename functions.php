@@ -171,6 +171,12 @@ function my_mce_before_init( $settings ) {
           'wrapper' => true
         ),
         array(
+          'title' => 'Add Initial Cap',
+          'selector' => 'p',
+          'classes' => 'add-initial-cap',
+          'wrapper' => true
+        ),
+        array(
           'title' => 'Pull Quote Left',
           'selector' => 'p',
           'classes' => 'pull-quote pull-left',
@@ -180,12 +186,6 @@ function my_mce_before_init( $settings ) {
           'title' => 'Pull Quote Right',
           'selector' => 'p',
           'classes' => 'pull-quote push-right',
-          'wrapper' => true
-        ),
-        array(
-          'title' => 'Book Review Intro',
-          'selector' => 'p',
-          'classes' => 'book-review-intro',
           'wrapper' => true
         ),
         array(
@@ -205,6 +205,13 @@ function my_mce_before_init( $settings ) {
           'selector' => 'a',
           'classes' => 'buy-link',
           'wrapper' => false
+        ),
+        array(
+          // For posts that are book reviews.
+          'title' => 'Book Review Intro',
+          'selector' => 'p',
+          'classes' => 'book-review-intro',
+          'wrapper' => true
         )
     );
 

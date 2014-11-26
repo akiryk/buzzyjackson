@@ -22,6 +22,7 @@ img.aligncenter {
 .full-width-image {
   height: 25vh;
   background-size: cover;
+  background-position-x: center;
   margin-bottom: 1em;
   @include mq(tablet){
     height: 500/16 * 1em;

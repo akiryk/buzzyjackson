@@ -2,6 +2,14 @@
  * Comments
  */
 
+.comment-author {
+  font-size: 14/16 * 1rem;
+  color: #999;
+}
+.comment-author-name {
+  margin-right: 1em;
+}
+
 .comments-wrapper {
   background: #f4f4f4;
 }
@@ -15,8 +23,24 @@
   }
 }
 
+.comment-body {
+  .reply {
+    clear: left;
+  }
+}
+
 .comment-content {
   font-size: 1rem;
+  display: -webkit-flex;
+  display: flex;
+  align-content: center;
+  overflow: hidden;
+  padding: 1em 0;
+}
+
+.avatar {
+  // float: left;
+  margin-right: 1em;
 }
 
 .comment-list {

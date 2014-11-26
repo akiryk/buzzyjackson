@@ -56,13 +56,12 @@ class AK_walker_comment extends Walker_Comment {
             <div id="comment-body-<?php comment_ID() ?>" class="comment-body">
              
                 <div class="comment-author vcard author">
-                    <?php echo ( $args['avatar_size'] != 0 ? get_avatar( $comment, $args['avatar_size'] ) :'' ); ?>
-                    <cite class="comment-author-name"><?php echo get_comment_author_link(); ?> </cite>
+                     <cite class="comment-author-name"><?php echo get_comment_author_link(); ?> </cite>
                     <span class="comment-timestamp"> <?php comment_date(); ?> at <?php comment_time(); ?></span>
-                    
                 </div><!-- /.comment-author -->
  
                 <div id="comment-content-<?php comment_ID(); ?>" class="comment-content">
+                    <div class="avatar-wrapper"><?php echo ( $args['avatar_size'] != 0 ? get_avatar( $comment, $args['avatar_size'] ) :'' ); ?></div>
                     <?php if( !$comment->comment_approved ) : ?>
                     <em class="comment-awaiting-moderation">Your comment is awaiting moderation.</em>
                      

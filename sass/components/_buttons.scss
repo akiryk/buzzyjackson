@@ -85,11 +85,10 @@
     display: inline;
     margin-right: 1em;
     padding-right: 1em;
+    padding-left: 0;
     text-align: left;
     &:last-of-type {
       border-right: none;
-      margin: 0;
-      padding: 0;
     }
   }
   
@@ -99,7 +98,7 @@
 }
 
 .wf-lato-n3-active {
-  .button {
+  .button, .buy-link {
     @include usefont(sans);
   }
 }

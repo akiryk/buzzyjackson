@@ -1,5 +1,5 @@
 WebFontConfig = {
-   google: { families: [ 'Lato:300,400,700,900:latin', 'Playfair+Display:900:latin', 'Merriweather:300,400,700,700italic,400italic:latin', 'Quicksand:400,700:latin'  ] }
+   google: { families: [ 'Lato:300,700:latin', 'Playfair+Display:900:latin', 'Merriweather:300,400,700,700italic,400italic:latin'  ] }
 };
 
 (function() {

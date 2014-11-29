@@ -1,20 +1,13 @@
 .callout {
-  display: inline-block;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 1.125;
-  margin-bottom: $bottom-spacing;
-  padding: 0.5em 1em;
-  text-align: center;
-  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-.callout span {
+.callout-major .callout-inner {
   display: inline-block;
   position: relative;  
 }
-.callout span:before,
-.callout span:after {
+.callout-major .callout-inner:before,
+.callout-major .callout-inner:after {
   content: "";
   position: absolute;
   height: 5px;
@@ -23,22 +16,31 @@
   top: 0.425rem;
   width: 4rem;
 }
-.callout span:before {
+.callout-major .callout-inner:before {
   right: 100%;
   margin-right: 15px;
 }
-.callout span:after {
+.callout-major .callout-inner:after {
   left: 100%;
   margin-left: 15px;
 }
 
 .callout-major {
-  color: $brand-red;
+  display: inline-block;
+  letter-spacing: 1px;
+  line-height: 1.125;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-transform: uppercase;
   font-size: 20/16 * 1em;
   font-weight: 700;
 
-  span:before,
-  span:after {
+  .callout-inner {
+    color: $brand-red;
+  }
+
+  .callout-inner:before,
+  .callout-inner:after {
     top: 0.625rem;
   }
 }
@@ -55,11 +57,28 @@
   }
 }
 
+.callout-minor {
+  @include backupfont(serif);
+  background-color: $brand-blue;
+  padding: .5rem;
+  font-weight: 400;
+  font-size: 1.25rem;
+  .callout-inner {
+    color: #fff;
+  }
+}
+
 .wf-lato-n3-active {
-  .callout {
+  .callout-major {
     @include usefont(sans);
   }
   .callout-meta {
     @include usefont(sans);
+  }
+}
+
+.wf-merriweather-n4-active {
+  .callout-minor {
+    @include usefont(serif);
   }
 }

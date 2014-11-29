@@ -16,19 +16,43 @@ $postID = get_the_ID();
 
     <section class="home-hero">
       <div class="home-hero-intro centered-module">
-        <?php 
+        <?php
+          $blurb = get_post_meta( $postID, 'mb-blurb', true );
           $heroimage = get_post_meta( $postID, 'meta-image', true );
           $url = get_post_meta( $postID, 'mb-landing-page-url', true );
-          if( !empty( $heroimage ) ): ?>
-            <figure class="hero-image margin-block">
-              <?php if( !empty( $url ) ) { ?>
-                <a href="<?php echo $url; ?>"><img src="<?php echo $heroimage; ?>"/> </a>
-              <?php } else { ?>
-                <img src="<?php echo $heroimage; ?>"/> 
-              <?php } ?>
-            </figure>
-        <?php endif; ?>
+        ?>
 
+         <?php // Print blurb and book image; ?>
+         <?php
+          if ( !empty( $blurb ) && !empty ( $heroimage) ): ?>
+            <div class="flex-container-row">
+              <figure class="hero-image margin-block flex-row">
+                <?php if( !empty( $url ) ) { ?>
+                  <a href="<?php echo $url; ?>"><img src="<?php echo $heroimage; ?>"/> </a>
+                <?php } else { ?>
+                  <img src="<?php echo $heroimage; ?>"/> 
+                <?php } ?>
+              </figure>
+
+              <div class="blurb">
+                <span class="blurb-quote"><?php echo $blurb; ?></span>
+                <span class="blurb-source">
+                  <?php echo get_post_meta( $postID, 'mb-blurb-source', true ); ?>
+                </span>
+              </div>
+            </div>
+
+        <?php // Print just the book image ?>
+        <?php elseif (!empty ($heroimage) ): ?>
+          <figure class="hero-image margin-block">
+            <?php if( !empty( $url ) ) { ?>
+              <a href="<?php echo $url; ?>"><img src="<?php echo $heroimage; ?>"/> </a>
+            <?php } else { ?>
+              <img src="<?php echo $heroimage; ?>"/> 
+            <?php } ?>
+          </figure>
+        <?php endif; ?>
+          
         <?php
           $title = get_post_meta( $postID, 'mb-book-title-1', true );
           if( !empty( $title ) ): ?>
@@ -54,7 +78,12 @@ $postID = get_the_ID();
             if( !empty( $callout ) ): ?>
               <?php $callout_style = get_post_meta( $postID, 'mb-callout-style', true ); ?>
               <div class="callout <?php echo $callout_style; ?> margin-block">
-                <span><?php echo $callout; ?></span>
+                <?php if( !empty( $url ) ){ ?>
+                  <a class="callout-inner" href="<?php echo $url; ?>">
+                    <?php echo $callout; ?></a>
+                <?php } else { ?>
+                  <span class="callout-inner"><?php echo $callout; ?></span>
+                <?php }; ?>
               </div>
             <?php endif; ?>
             <?php $callout_secondary = get_post_meta( $postID, 'mb-callout-secondary', true ); ?>

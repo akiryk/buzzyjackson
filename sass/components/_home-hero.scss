@@ -10,6 +10,13 @@
       max-width: 12rem;
     }
   }
+  .hero-image.flex-row {
+    flex: 1;
+  }
+}
+
+.flex-container-row .hero-image {
+  margin-bottom: 0;
 }
 
 .home-hero-intro {
@@ -27,6 +34,56 @@ h1.book-title {
   @include mq(tablet){
     margin-bottom: .75rem;
   }
+}
+
+.blurb {
+  flex: 2;
+  position:relative;
+  top: -.825rem;
+}
+
+.blurb-quote {
+  @include backupfont(serif);
+  display: block;
+  quotes: "“" "”" "‘" "’";
+  line-height: 1.6;
+  margin-bottom: .25rem;
+  font-size: 1rem;
+  text-align: left;
+  &::first-word {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+  &:before,
+  &:after {
+    font-size: 2rem;
+    color: #ccc;
+    font-weight: 700;
+    position: absolute;
+    
+  }
+  &:before {
+    content: open-quote;
+    left: -1.75rem;
+  }
+  &:after {
+    content: close-quote;
+  }
+  @include mq(tablet){
+    font-size: 1.25rem;
+    margin-bottom: .75rem;
+  }
+}
+
+.wf-merriweather-n4-active {
+  .blurb-quote {
+    @include usefont(serif);
+  }
+}
+
+.blurb-source {
+  display: block;
+  text-align: left;
 }
 
 .book-subtitle {

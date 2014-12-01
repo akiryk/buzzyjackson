@@ -153,6 +153,12 @@ function my_mce_before_init( $settings ) {
 
     $style_formats = array(
         array(
+          'title' => 'Simple call-out',
+          'selector' => 'p',
+          'classes' => 'simple-callout',
+          'wrapper' => true
+        ),
+        array(
         	'title' => 'Block quote title',
         	'selector' => 'p',
         	'classes' => 'quote-title',

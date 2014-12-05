@@ -2,6 +2,12 @@
   margin-bottom: 1rem;
 }
 
+.purchase-callout {
+  color: $brand-red;
+  font-size: 1.5em;
+  margin-bottom: 2rem;
+}
+
 .simple-callout {
   background: #eee;
   padding: 1em;
@@ -52,15 +58,12 @@
 }
 
 .callout-meta {
-  color: #666;
+  color: #555;
   letter-spacing: .01em;
   margin-bottom: $bottom-spacing;
   font-style: normal;
   font-weight: 300;
   font-size: 1em;
-  @include mq(tablet){
-    color: #999;
-  }
 }
 
 .callout-minor {

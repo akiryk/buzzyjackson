@@ -20,6 +20,7 @@ $postID = get_the_ID();
           $blurb = get_post_meta( $postID, 'mb-blurb', true );
           $heroimage = get_post_meta( $postID, 'meta-image', true );
           $url = get_post_meta( $postID, 'mb-landing-page-url', true );
+          $callout_link = get_post_meta( $postID, 'mb-callout-link', true );
         ?>
 
          <?php // Print blurb and book image; ?>
@@ -76,15 +77,16 @@ $postID = get_the_ID();
           <?php
             $callout = get_post_meta( $postID, 'mb-callout-primary', true );
             if( !empty( $callout ) ): ?>
-              <?php $callout_style = get_post_meta( $postID, 'mb-callout-style', true ); ?>
-              <div class="callout <?php echo $callout_style; ?> margin-block">
-                <?php if( !empty( $url ) ){ ?>
-                  <a class="callout-inner" href="<?php echo $url; ?>">
+              <?php if( !empty( $callout_link ) ){ ?>
+                <div class="margin-block">
+                  <a class="button button-normal" href="<?php echo $callout_link; ?>">
                     <?php echo $callout; ?></a>
-                <?php } else { ?>
+                </div>
+              <?php } else { ?>
+                <div class="margin-block callout callout-major">
                   <span class="callout-inner"><?php echo $callout; ?></span>
-                <?php }; ?>
-              </div>
+                </div>
+              <?php }; ?>
             <?php endif; ?>
             <?php $callout_secondary = get_post_meta( $postID, 'mb-callout-secondary', true ); ?>
             <?php if( !empty( $callout_secondary ) ): ?>
@@ -136,7 +138,7 @@ $postID = get_the_ID();
               <?php echo $book['desc']; ?>
             </p>
             <div class="secondary-purchase">
-              <a class="button button-tiny" href="<?php echo $book['url']; ?>">Buy Now</a> 
+              <a class="button button-tiny" href="<?php echo $book['buylink']; ?>">Buy Now</a> 
             </div>
           </div>
           </div>

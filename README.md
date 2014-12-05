@@ -20,7 +20,8 @@ When setting up this theme from scratch
    Make front page "home page", the page set to Home Main template.
 7. Make book pages. Use Book Main as the teamplate.
 7. In book pages, move Featured Image up.
-8. Go to Appearance > Widgets to customize "sidebar"
+8. Go to Appearance > Widgets to customize "sidebar" to enable catagories and archives of blog posts
+9. Go to Settings > Media Settings to customize thumbnail image sizes.
 
 When creating posts:
 1. If it's a book review, use book review intro format

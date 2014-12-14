@@ -146,9 +146,6 @@ function my_mce_buttons_2( $buttons ) {
 /*
 * Callback function to filter the MCE settings
 */
-
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
-
 function my_mce_before_init( $settings ) {
 
     $style_formats = array(
@@ -161,7 +158,7 @@ function my_mce_before_init( $settings ) {
         array(
         	'title' => 'Block quote title',
         	'selector' => 'p',
-        	'classes' => 'quote-title',
+        	'classes' => 'quote-title no-initial-cap',
         	'wrapper' => true
         ),
         array(
@@ -216,21 +213,35 @@ function my_mce_before_init( $settings ) {
           // For posts that are book reviews.
           'title' => 'Book Review Intro',
           'selector' => 'p',
-          'classes' => 'book-review-intro',
+          'classes' => 'book-review-intro no-initial-cap',
           'wrapper' => true
         )
     );
 
     $settings['style_formats'] = json_encode( $style_formats );
-
     return $settings;
 }
 
-add_action( 'admin_init', 'add_my_editor_style' );
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
+
+// change buttons in WYSWIG post editor, edit color palette
+function my_mce4_options( $init ) {
+  $default_colours = '"000000", "Black"';
+  $custom_colours = '
+      "b71909", "Burnt Red", "2b8fcb", "Link Blue", "666666", "Gray", "999999", "Light Gray"
+  ';
+  $init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']'; // build colour grid default+custom colors
+  $init['textcolor_rows'] = 6; // enable 6th row for custom colours in grid
+  return $init;
+}
+add_filter('tiny_mce_before_init', 'my_mce4_options');
+
 
 function add_my_editor_style() {
 	add_editor_style();
 }
+
+add_action( 'admin_init', 'add_my_editor_style' );
 
 /**
  * Apply styles to the visual editor

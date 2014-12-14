@@ -1,5 +1,5 @@
 p.add-initial-cap:first-letter,
-.single-post .entry-content p:first-of-type:not(.no-initial-cap):first-letter {
+.single-post .entry-content > p:first-of-type:not(.no-initial-cap):first-letter {
   @include backupfont(sans);
   color: $brand-red;
   font-size: 58/16 * 1rem;
@@ -11,7 +11,7 @@ p.add-initial-cap:first-letter,
 }
 
 .wf-lato-n3-active {
-  .single-post .entry-content p:first-of-type:not(.no-initial-cap):first-letter {
+  .single-post .entry-content > p:first-of-type:not(.no-initial-cap):first-letter {
     @include usefont(sans);
     color: $brand-red;
     font-size: 3.175em;
@@ -21,7 +21,7 @@ p.add-initial-cap:first-letter,
 
 .wf-playfairdisplay-n9-active {
   p.add-initial-cap:first-letter,
-  .single-post .entry-content p:first-of-type:not(.no-initial-cap):first-letter {
+  .single-post .entry-content > p:first-of-type:not(.no-initial-cap):first-letter {
     @include mq(desktop){
       @include usefont(fancy);
       font-size: 132/16 * 1rem;

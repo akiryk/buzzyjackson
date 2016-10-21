@@ -6,7 +6,7 @@ buzzyjackson_s
 When setting up this theme from scratch
 
 1. Turn on theme.
-2. Install these plugins at least: 
+2. Install these plugins at least:
   * buzzy_homepage_meta_template
   * buzzy_book_page_meta_template
   * buzzy_post_page_meta_template
@@ -16,7 +16,7 @@ When setting up this theme from scratch
 5. Create a menu in Appearance > menu
    Make sure menu's location is set to "primary"
    The menu items should be books, blog, news, bio/contact
-6. Go to settings > reading and set front page to "static" 
+6. Go to settings > reading and set front page to "static"
    Make front page "home page", the page set to Home Main template.
 7. Make book pages. Use Book Main as the teamplate.
 7. In book pages, move Featured Image up.
@@ -25,3 +25,11 @@ When setting up this theme from scratch
 
 When creating posts:
 1. If it's a book review, use book review intro format
+
+###Changes
+10.20.2016
+• Add meta tag to header.php to prove to Google who "owns" the site.
+• Add comments to top of style.css with theme information.
+
+10.21.2016
+Commented out commenting on single.php. This was done to eliminate threat of hacking, since Google reported some hacked comments were causing problems.

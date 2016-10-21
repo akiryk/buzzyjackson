@@ -1,7 +1,18 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*!
+Theme Name: buzzyjackson_s
+Theme URI: http://underscores.me/
+Author: Adam Kiryk
+Author URI: http://adamkiryk.com
+Description: A theme based on underscores
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: buzzyjackson_s
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
 
 @import "normalize";
 @import "settings";
@@ -33,7 +44,7 @@
 
 .assistive-text {
   position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);  
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 
